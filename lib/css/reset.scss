@@ -1,0 +1,7 @@
+html{height:100%;}
+div,header,footer,body,p,li,a,img,h1,h2,h3,h4,h5,h6,dl,dd,dt,span,strong,nav,aside,form,input,section{margin:0;padding:0;}
+ul,ol,li{margin:0;padding:0;list-style: none;}
+a{text-decoration: none;color:black;text-decoration:none;user-select: none;-moz-user-select: none;-webkit-user-select: none;-webkit-touch-callout: none;-webkit-tap-highlight-color:transparent;-webkit-backface-visibility: hidden;}
+.clearfix{}
+.clearfix:after{content:'';display:block;clear:both;}
+body{font: 0.6rem 'Hiragino Sans GB', 'Microsoft Yahei',\5b8b\4f53, Tahoma, Arial;}

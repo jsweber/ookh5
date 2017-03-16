@@ -30,7 +30,7 @@ readerStream.on("end",function(){
             console.log("html初始化成功");
         }
     });
-    fs.writeFile(`./src/${projectDir}/style.scss`,"",function(err){
+    fs.writeFile(`./src/${projectDir}/style.scss`,"@import './lib/css/reset.scss';",function(err){
         if(err){
             console.log("css 写入失败");
         }else{

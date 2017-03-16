@@ -41,7 +41,8 @@ if(NODE_ENV === "production"){
 //配置路径简写
 webpackConfig.resolve = {
     alias:{
-        jquery$:path.resolve(__dirname,"./lib/jquery.min.js"),
+        jquery$:path.resolve(__dirname,"./lib/js/jquery.min.js"),
+        scss:"./lib/css"
     } 
 }
 //配置loader
