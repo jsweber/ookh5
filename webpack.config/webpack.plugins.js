@@ -4,6 +4,7 @@ var path = require("path");
 var subProjects = require("./subProjects");
 
 function setPlugins(filename,title,env){
+    var plugins=[];
     if(env == "production"){
         plugins.push(
             new webpack.optimize.UglifyJsPlugin({
@@ -11,7 +12,6 @@ function setPlugins(filename,title,env){
             })
         );
     }
-    var plugins=[];
     plugins.push(new webpack.HotModuleReplacementPlugin());
     //添加全局匹配，value（jquery）值是在alias里定义的
     plugins.push(new webpack.ProvidePlugin({

@@ -1,5 +1,6 @@
 {
     "name":"michi",
     "version":"1.0.0",
-    "title":"michi-title"
+    "title":"michi-title",
+    "staticPath":"/view/wxpages/activitypage/"
 }

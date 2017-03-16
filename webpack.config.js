@@ -6,6 +6,8 @@ var projectConfig = JSON.parse(fs.readFileSync("project.config.json","utf-8"));
 var projectName = projectConfig.name;
 var projectVer = projectConfig.version;
 var title = projectConfig.title;
+var staticPath = projectConfig.staticPath;
+
 var pluginFn = require("./webpack.config/webpack.plugins");
 var devServer = require("./webpack.config/devServer");
 
@@ -15,13 +17,13 @@ var entry = {};
 entry[projectName] = path.resolve(__dirname,"src/"+projectName+"/main.js");
 webpackConfig.entry=entry;
 
-//判断是不是生产环境
-//todo：1.解决生产模式和开发模式的识别  2.解决生产模式打包后的路径问题
-if(process.env.NODE_ENV == "production"){
+//判断是不是生产环境,命令&& 前面有一个空格就会赋值
+var NODE_ENV = process.env.NODE_ENV || "development";
+if(NODE_ENV === "production"){
     webpackConfig.output = {
         filename:projectName+'/'+projectName+ "." +projectVer+".min.js",
         path:path.resolve(__dirname,"dist"),
-        publicPath:"/"
+        publicPath:staticPath
     };
     console.log("现在是生产环境");
 }else{
@@ -30,11 +32,12 @@ if(process.env.NODE_ENV == "production"){
         path:path.resolve(__dirname,"dist"),
         publicPath:"/"
     };
+    //配置map
+    webpackConfig.devtool = "source-map";
     webpackConfig.devServer= devServer;
     console.log("现在是开发环境");
 }
-//配置map
-webpackConfig.devtool = "inline-source-map";
+
 //配置路径简写
 webpackConfig.resolve = {
     alias:{
@@ -59,6 +62,6 @@ webpackConfig.module = {
     ]
 }
 //配置插件
-webpackConfig.plugins = pluginFn(projectName,title,process.env.NODE_ENV);
+webpackConfig.plugins = pluginFn(projectName,title,NODE_ENV);
 
 module.exports=webpackConfig
