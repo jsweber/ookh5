@@ -21,14 +21,14 @@ webpackConfig.entry=entry;
 var NODE_ENV = process.env.NODE_ENV || "development";
 if(NODE_ENV === "production"){
     webpackConfig.output = {
-        filename:projectName+'/'+projectName+ "." +projectVer+".min.js",
+        filename:projectName+'/'+projectName+ "." +projectVer+"[hash].min.js",
         path:path.resolve(__dirname,"dist"),
         publicPath:staticPath
     };
     console.log("现在是生产环境");
 }else{
     webpackConfig.output = {
-        filename:projectName+'/'+projectName+ "." +projectVer+".js",
+        filename:projectName+'/'+projectName+ "." +projectVer+"[hash].js",
         path:path.resolve(__dirname,"dist"),
         publicPath:"/"
     };

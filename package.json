@@ -16,6 +16,7 @@
   "scripts": {
     "build:dev": "webpack --config webpack.config.js",
     "build:prod":"set NODE_ENV=production&&webpack -p",
-    "server": "webpack-dev-server --hot --inline"
+    "server": "webpack-dev-server --hot --inline",
+    "create":"node createproject.js"
   }
 }

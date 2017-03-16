@@ -1,6 +1,8 @@
-import style from "./style.scss";
+import style from './style.scss';
 
-$(".box").html("233").on("click",()=>{
-    $(".box").css("background","pink");
+$(".box").on("click",function(){
+    $(this).css({
+        transition:"1s all",
+        transform:"scale(0.3)"
+    });
 });
-

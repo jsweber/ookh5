@@ -21,7 +21,7 @@ function setPlugins(filename,title,env){
         new HtmlWebpackPlugin({
             title:title,
             filename:`${filename}/${filename}.html`,
-            template:`src/${filename}/template.html`,
+            template:`src/${filename}/${filename}.html`,
             chunks:[filename],  //指定哪个entry入口调用
             inject:true
         }) 
