@@ -42,15 +42,17 @@ if(NODE_ENV === "production"){
 webpackConfig.resolve = {
     alias:{
         jquery$:path.resolve(__dirname,"./lib/js/jquery.min.js"),
-        scss:"./lib/css"
-    } 
+        scss:path.resolve(__dirname,"lib/css/"),
+        js:path.resolve(__dirname,"lib/js/")
+    },
+    modules: [path.resolve(__dirname, 'node_modules')]
 }
 //配置loader
 webpackConfig.module = {
     rules:[
         {
             test:/\.scss$/,
-            loader:"style-loader!css-loader!sass-loader"
+            loader:"style-loader!css-loader?minimize!sass-loader"
         },
         {
             test:/\.js$/,

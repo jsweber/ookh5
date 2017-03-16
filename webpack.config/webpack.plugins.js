@@ -7,8 +7,14 @@ function setPlugins(filename,title,env){
     var plugins=[];
     if(env == "production"){
         plugins.push(
+            //http://imweb.io/topic/5868e1abb3ce6d8e3f9f99bb   这里看详情
             new webpack.optimize.UglifyJsPlugin({
-                compress:{warnings:false}
+                beautify: false,
+                comments: false,
+                compress:{
+                    warnings:false,
+                    drop_console: true,
+                }
             })
         );
     }
