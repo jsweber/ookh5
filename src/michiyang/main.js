@@ -13,47 +13,72 @@ let lastId = sessionStorage.getItem("lastId") || "";
 let isReq = 1;  //用来判断是否继续发送请求
 
 const HOST="http://192.168.1.50:8081";
-const reqTipNum = 5;
+const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
 const animLoop = 500; //弹幕轮询，幻灯片放映用 
 
+buttonControl();
+function buttonControl(){
+   let $tipList = $(".tip-list");
+   let $dantext = $("#dantext");
+    $(".input-btn").on("click",function(){
+        $.ajax({
+            url:`${HOST}/wechat/user/postDanmu`,
+            data:{
+                message:$dantext.val()
+            },
+            type:"post",
+            dataType:"json",
+            success(res){
+                console.log(res);
+                $dantext.val("");
+            },
+            error(err){
+                console.log("应用层错误");
+            }
+        });
+    });
 
+    $(".dan-btn").on("click",()=>{
+        $tipList.css({
+            opacity:($tipList.css("opacity")) == 1 ? 0:1
+        });
+    });
+
+}
 
 httpHandle();
 function httpHandle(){
     console.log("isReq:"+isReq);
     console.log("lastId:"+lastId);
-    if(isReq){
-        $.ajax({
-            url:`${HOST}/wechat/user/getDanmu?limit=${reqTipNum}&lastId=${lastId}`,
-            type:"get",
-            dataType:"json",
-            success(res){
-                tipLine.show();
-                if(res.code == 200){
-                    let len = res.data.length;
-                    tipLine.concat(res.data);  //下面用了pop，会删除元素，所以这里先合并
-                    isReq = len;
-                    lastId = len>0 ? res.data.pop().id : lastId;
-                    sessionStorage.setItem("lastId",lastId);
-                }else{
-                    console.log("应用层错误");
-                }
-            },
-            error(err){
-                console.log("服务器错误："+err);
+    $.ajax({
+        url:`${HOST}/wechat/user/getDanmu?limit=${reqTipNum}&lastId=${lastId}`,
+        type:"get",
+        dataType:"json",
+        success(res){
+            if(res.code == 200){
+                let len = res.data.length;
+                tipLine.concat(res.data);  //下面用了pop，会删除元素，所以这里先合并
+                isReq = len;  //当长度为0时可以用来判断是否发送请求
+                lastId = len>0 ? res.data.pop().id : lastId;
+                sessionStorage.setItem("lastId",lastId);
+            }else{
+                console.log("应用层错误");
+                isReq = 0;
             }
-        });
-    }else{
-        console.log("server no data");
-    }
+        },
+        error(err){
+            console.log("服务器错误："+err);
+            isReq = 0;
+        }
+    });
 }
 
-function dan(){
+function danHandle(){
     for(let i=0;i< dansLen;i++){
         var $dan = $dans.eq(i);
         if(0 == $dan.attr("data-ready") && tipLine.len()>0){
-            var time = Math.floor(Math.random()*12)+3;
+            var time = Math.floor(Math.random()*12)+5;
             var d = new Dan($dan,time,tipLine.get().message);  //line get方法自带删除功能
             d.move();
         }
@@ -79,7 +104,7 @@ function setFrameLoop(setInterVal,animInterVal){
         //幻灯片切换判断;弹幕放在这里是为了充分利用，毕竟一次请求可以很多数据，dom只有3个，要多跑点
         if(nowAnim-startAnim > animInterVal){
             startAnim = startAnim;
-            dan();
+            danHandle();
         }
 
         requestAnimationFrame(animLoop);

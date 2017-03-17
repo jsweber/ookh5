@@ -1,7 +1,14 @@
 body{height:100%;}
 //弹幕层
-.tip-wrapper{width:100%;height:100%;position: relative;overflow:hidden;background:#ccc;}
+.view-wrapper{width:100%;height:100%;position: relative;overflow:hidden;background:#ccc;}
 
+.tip-list{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
 $tippadding:0.8rem;
 .tip-top{line-height: 1.6rem;padding:0 $tippadding 0 $tippadding;background:orange;font-size:0.8rem;position: absolute;top:1rem;-webkit-transform:translate3d(16rem,0,0);transform:translate3d(16rem,0,0);}
 .tip-middle{
@@ -15,6 +22,45 @@ $tippadding:0.8rem;
 .tip-four{
     @extend .tip-top;
     top:6.8rem;
+}
+.tip-five{
+    @extend .tip-top;
+    top:8.5rem;
+}
+
+.control-wrapper{
+    width:100%;
+    height:8rem;
+    position: absolute;
+    bottom:0;
+    left:0;
+    z-index:10;
+
+    #dantext{
+        width:10rem;
+        line-height: 1.2rem;
+        display:block;
+        margin:1.3rem 0 0 2rem;
+    }
+
+    .input-btn{
+        width:2rem;
+        height:2rem;
+        position: absolute;
+        right:1rem;
+        top:1rem;
+        background:#000;
+        line-height: 2rem;
+        color:#fff;
+        text-align: center;
+        border-radius: 1rem;
+    }
+
+    .dan-btn{
+        @extend .input-btn;
+
+        top:5rem;
+    }
 }
 
 
