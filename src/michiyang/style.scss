@@ -1,0 +1,17 @@
+body{height:100%;}
+//弹幕层
+.tip-wrapper{width:100%;height:100%;position: relative;overflow:hidden;background:#ccc;}
+
+$tippadding:0.8rem;
+.tip-top{line-height: 1.6rem;padding:0 $tippadding 0 $tippadding;background:orange;font-size:0.8rem;position: absolute;top:1rem;-webkit-transform:translate3d(18rem,0,0);transform:translate3d(18rem,0,0);}
+.tip-middle{
+    @extend .tip-top;
+    top:3rem;
+}
+.tip-bottom{
+    @extend .tip-top;
+    top:5rem;
+}
+
+
+
