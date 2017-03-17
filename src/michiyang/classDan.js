@@ -14,7 +14,7 @@ class Dan{
             // console.log(self.text+":start",self.$dom.attr("data-ready"));
             self.$dom.attr("data-ready",1);
             self.$dom.css({
-                transition:`all ${this.moveTime}s linear`,
+                transition:`all ${this.moveTime}s cubic-bezier(.01,.22,.97,.65)`,
                 transform:`translate3d(${-(self.$dom[0].clientWidth+o.winw)}px,0,0)`
             });
         }
