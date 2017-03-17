@@ -12,7 +12,8 @@ let dansLen = $dans.length;
 let lastId = sessionStorage.getItem("lastId") || "";
 let isReq = 1;  //用来判断是否继续发送请求
 
-const HOST="http://192.168.1.50:8081";
+// const HOST="http://192.168.1.50:8081";
+const HOST="http://localhost:9000";
 const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
 const animLoop = 500; //弹幕轮询，幻灯片放映用 
