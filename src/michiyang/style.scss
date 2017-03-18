@@ -5,6 +5,7 @@ body{height:100%;}
 .frame-end-mast{
     @extend .frame-wrapper;
     z-index:20;
+    background:rgba(0,0,0,0.8);
 
     .replay{
         display:block;
