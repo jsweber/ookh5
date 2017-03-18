@@ -6,6 +6,12 @@ import Line from "./classLine";
 
 sessionStorage.removeItem("lastId");  //测试用
 
+let $framewrapper = $(".frame-wrapper");
+let $frames = $(".frame");
+let $frameEndMast = $(".frame-end-mast");
+let frameLen = $frames.length;
+let startFrame = 0;
+
 let tipLine = new Line(); //存储服务器获取的弹幕队列
 let $dans = $(".tip-hook");
 let dansLen = $dans.length;
@@ -16,7 +22,7 @@ let isReq = 1;  //用来判断是否继续发送请求
 const HOST="http://192.168.1.6:9000";
 const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
-const animLoop = 500; //弹幕轮询，幻灯片放映用 
+const animLoop = 1000; //弹幕轮询，幻灯片放映用 
 
 buttonControl();
 function buttonControl(){
@@ -31,7 +37,6 @@ function buttonControl(){
             type:"post",
             dataType:"json",
             success(res){
-                console.log(res);
                 $dantext.val("");
             },
             error(err){
@@ -50,8 +55,6 @@ function buttonControl(){
 
 httpHandle();
 function httpHandle(){
-    console.log("isReq:"+isReq);
-    console.log("lastId:"+lastId);
     $.ajax({
         url:`${HOST}/wechat/user/getDanmu?limit=${reqTipNum}&lastId=${lastId}`,
         type:"get",
@@ -104,12 +107,33 @@ function setFrameLoop(setInterVal,animInterVal){
         }
         //幻灯片切换判断;弹幕放在这里是为了充分利用，毕竟一次请求可以很多数据，dom只有3个，要多跑点
         if(nowAnim-startAnim > animInterVal){
-            startAnim = startAnim;
+            startAnim = nowAnim;
             danHandle();
+            play(playEnd);
         }
 
         requestAnimationFrame(animLoop);
     }
 }
 
+initImgFrame();
+function initImgFrame(){
+    $framewrapper.css("width",frameLen*o.winw);
+}
+function play(cd){   
+    if(startFrame < frameLen){
+        $framewrapper.css("transform",`translate3d(${-o.winw*startFrame}px,0,0)`);
+    }else if(startFrame === frameLen ){
+        cd && cd();        
+    }
+    startFrame ++;
+}
+function playEnd(){
+    $frameEndMast.show();
+
+}
+$(".replay").on("click",()=>{
+    $frameEndMast.hide();
+    startFrame = 0;
+});
 
