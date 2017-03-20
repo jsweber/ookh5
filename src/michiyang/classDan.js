@@ -1,11 +1,17 @@
 import o from "js/common";
 class Dan{
-    constructor($dom,moveTime,text){
+    constructor($dom,moveTime,text,isMyself){
         //dom的data-ready属性  0：待命可以出发了;1: 开始运动
         this.$dom = $dom;
         this.moveTime = moveTime;
         this.text = text;
         this.$dom.html(text);
+        this.isMyself = isMyself || false;
+        if("true" === JSON.stringify(this.isMyself)){
+            this.$dom.css("color","pink");
+        }else{
+            this.$dom.css("color","#000");
+        }
     }
     move(cb){
         //当dom已经准备好了可以就可以动了，没有的话就排队

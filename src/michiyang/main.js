@@ -4,7 +4,9 @@ import o from "js/common";
 import Dan from "./classDan";
 import Line from "./classLine";
 import ImgLoad from "./classImgLoading";
+import ILoading from "js/ILoading.min.js";
 
+console.log(ILoading);
 sessionStorage.removeItem("lastId");  //测试用
 
 let $loadMast = $(".loading-mast");
@@ -21,7 +23,7 @@ let lastId = sessionStorage.getItem("lastId") || "";
 let isReq = 1;  //用来判断是否继续发送请求
 
 // const HOST="http://192.168.1.50:8081";
-const HOST="http://192.168.1.6:9000";
+const HOST="http://localhost:9000";
 const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
 const animLoop = 500; //弹幕轮询，幻灯片放映用 
@@ -35,7 +37,7 @@ dealLoading(()=>{
 });
 
 function dealLoading(cb){
-    let l = new ImgLoad(".frame-wrapper");
+    let l = new ILoading(".frame-wrapper");
     let lock = true;
 
     setTimeout(()=>{
@@ -45,14 +47,14 @@ function dealLoading(cb){
             cb();
         }
     },5000);
-    l.loading((count,sum)=>{
+    l.loadingProcess((count,sum)=>{
         $loadMast.html(`${Math.floor(count/sum*100)}%`);
         if(count === sum && lock){
             lock = false;
             $loadMast.hide();
             cb();
         }
-    });
+    },1000);
 }
 
 buttonControl();
@@ -114,7 +116,8 @@ function danHandle(){
         var $dan = $dans.eq(i);
         if(0 == $dan.attr("data-ready") && tipLine.len()>0){
             var time = Math.floor(Math.random()*12)+5;
-            var d = new Dan($dan,time,tipLine.get().message);  //line get方法自带删除功能
+            var tip = tipLine.get();
+            var d = new Dan($dan,time,tip.message,tip.isMyself);  //line get方法自带删除功能
             d.move();
         }
     }
