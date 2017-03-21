@@ -3,23 +3,19 @@ import style from './style.scss'
 import o from "js/common";
 import Dan from "./classDan";
 import Line from "./classLine";
-import ImgLoad from "./classImgLoading";
 import ILoading from "js/ILoading.min.js";
-
-console.log(ILoading);
-sessionStorage.removeItem("lastId");  //测试用
 
 let $loadMast = $(".loading-mast");
 let $framewrapper = $(".frame-wrapper");
 let $frames = $(".frame");
 let $frameEndMast = $(".frame-end-mast");
 let frameLen = $frames.length;
-let startFrame = 0;
+let startFrame = 0;//用于指向frame
 
 let tipLine = new Line(); //存储服务器获取的弹幕队列
 let $dans = $(".tip-hook");
 let dansLen = $dans.length;
-let lastId = sessionStorage.getItem("lastId") || "";
+let lastId = localStorage.getItem("lastId") || "";
 let isReq = 1;  //用来判断是否继续发送请求
 
 // const HOST="http://192.168.1.50:8081";
@@ -63,7 +59,7 @@ function buttonControl(){
    let $dantext = $("#dantext");
     $(".input-btn").on("click",function(){
         $.ajax({
-            url:`${HOST}/wechat/user/postDanmu`,
+            url:"/wechat/user/postDanmu",
             data:{
                 message:$dantext.val()
             },
@@ -89,7 +85,7 @@ function buttonControl(){
 httpHandle();
 function httpHandle(){
     $.ajax({
-        url:`${HOST}/wechat/user/getDanmu?limit=${reqTipNum}&lastId=${lastId}`,
+        url:`/wechat/user/getDanmu?limit=${reqTipNum}&lastId=${lastId}`,
         type:"get",
         dataType:"json",
         success(res){
@@ -98,7 +94,7 @@ function httpHandle(){
                 tipLine.concat(res.data);  //下面用了pop，会删除元素，所以这里先合并
                 isReq = len;  //当长度为0时可以用来判断是否发送请求
                 lastId = len>0 ? res.data.pop().id : lastId;
-                sessionStorage.setItem("lastId",lastId);
+                localStorage.setItem("lastId",lastId);
             }else{
                 console.log("应用层错误");
                 isReq = 0;
