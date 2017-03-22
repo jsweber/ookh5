@@ -8,9 +8,9 @@ class Dan{
         this.$dom.html(text);
         this.isMyself = isMyself || false;
         if("true" === JSON.stringify(this.isMyself)){
-            this.$dom.css("color","pink");
+            this.$dom.css("color","#ff9595");
         }else{
-            this.$dom.css("color","#000");
+            this.$dom.css("color","#fff");
         }
     }
     move(cb){

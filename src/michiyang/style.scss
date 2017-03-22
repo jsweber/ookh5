@@ -1,34 +1,105 @@
 body{height:100%;}
 .main-frame{width:100%;height:100%;position: relative;overflow: hidden;}
 .frame-wrapper{width:100%;height:100%;position: absolute;top:0;left:0;overflow:hidden;}
-.frame{width:16rem;height:100%;overflow: hidden;float:left;}
+.frame{
+    width:16rem;
+    height:100%;
+    overflow: hidden;
+    float:left;
+    text-align: center;
+    display:flex;
+    display:-webkit-flex;
+    justify-content: center;
+
+    img{
+        height:100%;
+    }    
+}
+
+@function rem($px){
+    @return $px/640*16rem;
+}
 
 .frame-end-mast{
     @extend .frame-wrapper;
     z-index:20;
-    background:rgba(0,0,0,0.8);
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg) no-repeat;
+    background-size:cover;
 
-    .replay{
+    .last-btn{
         display:block;
-        width:4rem;
-        height:1.8rem;
-        background:#000;
-        color:#fff;
+        width:rem(192);
+        height:rem(70);
+        line-height: rem(70);
+        position: absolute;
+        border-radius:0.3rem;
         text-align: center;
-        line-height: 1.8rem;
-        margin:5rem auto 0;
+        font-size:rem(38);
     }
+    .go{
+        color:#000;
+        background:#fff;
+        left:rem(94);
+        bottom:rem(230);
+    }
+    .replay{
+        color:#fff;
+        background:#000;
+        right:rem(94);
+        bottom:rem(230);
+    }
+
+    .logo-btn{
+        width:rem(102);
+        position: absolute;
+        left:rem(272);
+        bottom:rem(62);
+        animation:scaleAnim 2s linear infinite;
+    }
+}
+
+@keyframes scaleAnim{
+    10%{transform:scale(1);}
+    50%{transform:scale(1.6);}
+    90%{transform:scale(1);}
 }
 
 .loading-mast{
     @extend .frame-wrapper;
 
-    background:#000;
+    background:#fff;
     color:#fff;
     font-size:30px;
     text-align: center;
     line-height: 70px;
     z-index:50;
+
+    .loading-icon{
+        width:3rem;
+        margin:10rem auto 0;
+        transform-origin:54% 50%;
+        animation: rotate 7s linear infinite;
+    }
+    
+    .loading-text{
+        text-align: center;
+        font-size:0.7rem;
+        color:#333333;
+        line-height: 0.8rem;
+        margin-top:-0.1rem;
+
+        i{
+
+        }
+    }
+}
+@keyframes rotate{
+    from{transform:rotate3d(0,0,1,0deg)}
+    to{transform:rotate3d(0,0,1,360deg)}
+}
+@keyframes dot{
+    from{opacity:1;}
+    to{opacity:0;}
 }
 
 
@@ -46,22 +117,22 @@ body{height:100%;}
     left:0;
 }
 $tippadding:0.8rem;
-.tip-top{line-height: 1.6rem;padding:0 $tippadding 0 $tippadding;background:orange;font-size:0.8rem;position: absolute;top:1rem;-webkit-transform:translate3d(16rem,0,0);transform:translate3d(16rem,0,0);}
+.tip-top{line-height: 1.2rem;padding:0 $tippadding 0 $tippadding;font-size:0.9rem;position: absolute;top:1rem;-webkit-transform:translate3d(16rem,0,0);transform:translate3d(16rem,0,0);color:#fff;}
 .tip-middle{
     @extend .tip-top;
-    top:3rem;
+    top:2.7rem;
 }
 .tip-bottom{
     @extend .tip-top;
-    top:5rem;
+    top:4rem;
 }
 .tip-four{
     @extend .tip-top;
-    top:6.8rem;
+    top:5.8rem;
 }
 .tip-five{
     @extend .tip-top;
-    top:8.5rem;
+    top:7.2rem;
 }
 
 .control-wrapper{
@@ -78,25 +149,77 @@ $tippadding:0.8rem;
         display:block;
         margin:1.3rem 0 0 2rem;
     }
-
-    .input-btn{
-        width:2rem;
-        height:2rem;
+    .dan-send-wrapper{
+        width:100%;height:rem(71);
         position: absolute;
-        right:1rem;
-        top:1rem;
-        background:#000;
-        line-height: 2rem;
-        color:#fff;
+        bottom:3px;
+        left:0;
+        display:flex;
+        display:-webkit-flex;
+    }
+    .dan-content{
+        flex:0 0 rem(490);
+        height:100%;
+        border:1px solid #fff;
+        background:transparent;
+        line-height: rem(70);
+        font-size:0.8rem;
         text-align: center;
-        border-radius: 1rem;
+        color:#fff;
+    }
+    .input-btn{
+        flex:1;
+        height:100%;
+        line-height: rem(70);
+        font-size:0.8rem;
+        text-align: center;
+        color:#ffa18b;
+        border:1px solid #fff;
+        border-left:none;
     }
 
-    .dan-btn{
-        @extend .input-btn;
+    .dan-btn-wrapper{
+        width:1.8rem;
+        height:1.8rem;
+        position: absolute;
+        right:rem(30);
+        bottom:2.5rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/michiyang/dan-btn-disappear.png) no-repeat;
+        background-size:100% 100%;
 
-        top:5rem;
+        .dan-btn-hook{
+            display:block;
+            width:100%;
+            height:100%;
+        }
     }
+}
+
+.rule-mast{
+    display:none;
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:70;
+    background:rgba(0,0,0,0.7);
+
+    .rule_text{
+        display:block;
+        width:rem(516);
+        margin:rem(152) auto 0;
+        border-radius: 0.2rem;
+    }
+
+    .close-rule-btn{
+        width:rem(70);
+        height:rem(70);
+        margin:rem(44) auto 0;
+
+        img{width:100%;}
+    }
+
 }
 
 

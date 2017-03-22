@@ -15,7 +15,6 @@ let startFrame = 0;//用于指向frame
 let tipLine = new Line(); //存储服务器获取的弹幕队列
 let $dans = $(".tip-hook");
 let dansLen = $dans.length;
-let lastId = localStorage.getItem("lastId") || "";
 let isReq = 1;  //用来判断是否继续发送请求
 
 // const HOST="http://192.168.1.50:8081";
@@ -24,6 +23,8 @@ const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
 const animLoop = 500; //弹幕轮询，幻灯片放映用 
 
+localStorage.removeItem("lastId");
+let lastId = localStorage.getItem("lastId") || "";
 //处理图片loading
 dealLoading(()=>{
     //不断循环
@@ -36,27 +37,27 @@ function dealLoading(cb){
     let l = new ILoading(".frame-wrapper");
     let lock = true;
 
-    setTimeout(()=>{
-        if(lock){
-            lock = false;
-            $loadMast.hide();
-            cb();
-        }
-    },5000);
+    // setTimeout(()=>{
+    //     if(lock){
+    //         lock = false;
+    //         $loadMast.hide();
+    //         cb();
+    //     }
+    // },5000);
     l.loadingProcess((count,sum)=>{
-        $loadMast.html(`${Math.floor(count/sum*100)}%`);
         if(count === sum && lock){
             lock = false;
             $loadMast.hide();
             cb();
         }
-    },1000);
+    });
 }
 
 buttonControl();
 function buttonControl(){
-   let $tipList = $(".tip-list");
-   let $dantext = $("#dantext");
+    let $ruleMast = $(".rule-mast");
+    let $tipList = $(".tip-list");
+    let $dantext = $(".dan-content");
     $(".input-btn").on("click",function(){
         $.ajax({
             url:"/wechat/user/postDanmu",
@@ -69,15 +70,27 @@ function buttonControl(){
                 $dantext.val("");
             },
             error(err){
-                console.log("应用层错误");
+                console.log("服务器错误");
             }
         });
     });
 
-    $(".dan-btn").on("click",()=>{
+    let $danBtn = $(".dan-btn-hook");
+    $danBtn.on("click",()=>{
         $tipList.css({
             opacity:($tipList.css("opacity")) == 1 ? 0:1
         });
+        $danBtn.css({
+            opacity:($danBtn.css("opacity")) == 1 ? 0:1
+        });
+    });
+
+    $(".close-rule-btn").on("click",()=>{
+        $ruleMast.hide();
+    });
+
+    $(".logo-btn").on("click",()=>{
+        $ruleMast.show();
     });
 
 }
@@ -158,10 +171,11 @@ function play(cd){
 }
 function playEnd(){
     $frameEndMast.show();
-
 }
 $(".replay").on("click",()=>{
-    $frameEndMast.hide();
     startFrame = 0;
+    setTimeout(()=>{
+        $frameEndMast.hide();
+    },500);
 });
 
