@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var fs = require("fs");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var projectConfig = JSON.parse(fs.readFileSync("project.config.json","utf-8"));
 var projectName = projectConfig.name;
@@ -51,17 +52,20 @@ webpackConfig.resolve = {
 webpackConfig.module = {
     rules:[
         {
-            test:/\.scss$/,
-            loader:"style-loader!css-loader?minimize!sass-loader"
-        },
-        {
             test:/\.js$/,
             exclude:/node_modules/,
             loader:"babel-loader",
             query:{
                 presets:['es2015']
             }
-        }
+        },
+        {
+            test:/\.scss$/,
+            loader: ExtractTextPlugin.extract({
+                fallbackLoader: "style-loader",
+                loader: "css-loader?minimize!sass-loader",
+            }),
+        },
     ]
 }
 //配置插件

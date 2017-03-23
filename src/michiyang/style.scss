@@ -53,14 +53,25 @@ body{height:100%;background:#000;}
         width:rem(102);
         position: absolute;
         left:rem(272);
-        bottom:rem(62);
+        bottom:rem(100);
         animation:scaleAnim 2s linear infinite;
+    }
+    .logo-is-btn{
+        width:100%;
+        line-height: 1rem;
+        position: absolute;
+        bottom:1rem;
+        left:0;
+        text-align: center;
+        color:#fff;
+        font-size:0.8rem;
+        letter-spacing: 1px;
     }
 }
 
 @keyframes scaleAnim{
     10%{transform:scale(1);}
-    50%{transform:scale(1.6);}
+    50%{transform:scale(1.4);}
     90%{transform:scale(1);}
 }
 

@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var path = require("path");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var subProjects = require("./subProjects");
 
 function setPlugins(filename,title,env){
@@ -18,6 +19,7 @@ function setPlugins(filename,title,env){
             })
         );
     }
+    plugins.push(new ExtractTextPlugin(`${filename}/style.[hash].css`));
     plugins.push(new webpack.HotModuleReplacementPlugin());
     //添加全局匹配，value（jquery）值是在alias里定义的
     plugins.push(new webpack.ProvidePlugin({

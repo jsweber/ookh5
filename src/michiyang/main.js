@@ -21,12 +21,12 @@ let isReq = 1;  //用来判断是否继续发送请求
 const HOST="http://localhost:9000";
 const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
-const animLoop = 500; //弹幕轮询，幻灯片放映用 
+const animLoop = 1500; //弹幕轮询，幻灯片放映用 
 
 linkApp({
     shareInfo:{
         title:'MichiLiang',
-        desc:'你敢怎样 MichiLiang祝你表达自我',
+        desc:'你敢怎样 MichiLiang助你表达自我',
         shareImg:"http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg"
     },
     link:{
@@ -41,9 +41,7 @@ let lastId = localStorage.getItem("lastId") || "";
 //处理图片loading
 dealLoading(()=>{
     //不断循环
-    setTimeout(()=>{
-        setFrameLoop(loopTime,animLoop);
-    },1000);
+    setFrameLoop(loopTime,animLoop);
 });
 
 function dealLoading(cb){
@@ -189,6 +187,6 @@ $(".replay").on("click",()=>{
     startFrame = 0;
     setTimeout(()=>{
         $frameEndMast.hide();
-    },500);
+    },animLoop);
 });
 
