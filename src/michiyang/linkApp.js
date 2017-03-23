@@ -69,7 +69,7 @@ function linkApp(data){
                 if (sign != '') {
                     wx.config({
                         debug: false,
-                        appId: "wxf49416ed43c7baa8",   //正式：wx8b33756ca20faafa  测试：wxf49416ed43c7baa8
+                        appId: "wx8b33756ca20faafa",   //正式：wx8b33756ca20faafa  测试：wxf49416ed43c7baa8
                         timestamp: timestamp,
                         nonceStr: nonceStr,
                         signature: sign,

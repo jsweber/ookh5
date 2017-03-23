@@ -28,13 +28,14 @@ body{height:100%;background:#000;}
 
     .last-btn{
         display:block;
-        width:rem(192);
-        height:rem(70);
-        line-height: rem(70);
+        width:rem(198);
+        height:rem(74);
+        line-height: rem(74);
         position: absolute;
         border-radius:0.3rem;
         text-align: center;
         font-size:rem(38);
+        font-weight:bold;
     }
     .go{
         color:#000;
@@ -67,7 +68,10 @@ body{height:100%;background:#000;}
         font-size:0.8rem;
         letter-spacing: 1px;
     }
+    
+    
 }
+::-webkit-input-placeholder{color:#fff;}
 
 @keyframes scaleAnim{
     10%{transform:scale(1);}

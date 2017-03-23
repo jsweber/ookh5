@@ -21,12 +21,12 @@ let isReq = 1;  //用来判断是否继续发送请求
 const HOST="http://localhost:9000";
 const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
-const animLoop = 1500; //弹幕轮询，幻灯片放映用 
+const animLoop = 2000; //弹幕轮询，幻灯片放映用 
 
 linkApp({
     shareInfo:{
-        title:'MichiLiang',
-        desc:'你敢怎样 MichiLiang助你表达自我',
+        title:'分享获得30元专属二维码',
+        desc:'福利 | Michi Liang敢爱专场，助你表达自我',
         shareImg:"http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg"
     },
     link:{
@@ -48,14 +48,14 @@ function dealLoading(cb){
     let l = new ILoading(".frame-wrapper");
     let lock = true;
 
-    // setTimeout(()=>{
-    //     if(lock){
-    //         lock = false;
-    //         $loadMast.hide();
-    //         cb();
-    //     }
-    // },5000);
-    l.loadingProcessMock((count,sum)=>{
+    setTimeout(()=>{
+        if(lock){
+            lock = false;
+            $loadMast.hide();
+            cb();
+        }
+    },5000);
+    l.loadingProcess((count,sum)=>{
         if(count === sum && lock){
             lock = false;
             $loadMast.hide();
