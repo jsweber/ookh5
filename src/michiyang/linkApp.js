@@ -59,7 +59,8 @@ function linkApp(data){
             dataType: 'JSON',
             timeout: 1000,
             error: function (textStatus) {
-                alert('系统错误');
+                // alert('系统错误');
+                console.log("微信请求验证错误");
             },
             success: function (msg) {
                 timestamp = msg.timestamp;

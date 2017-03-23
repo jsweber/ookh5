@@ -8,24 +8,22 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link rel="icon" href="http://wx.ooklady.com/easyui/wechat/images/favicon.ico" type="image/x-icon">
     <script>
         (function () {
             var df_width = 320, df_dpr = 1, df_fs = 20, win = window, doc = document, html = doc.getElementsByTagName('html')[0];
             html.setAttribute('data-dpr', win.devicePixelRatio);
             html.setAttribute('style', 'font-size:' + (doc.documentElement.clientWidth / df_width * df_fs) + 'px');
         })();
-    </script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    </script> 
 </header>
 <body>
     <!-- 让微信抓取 -->
-    <img src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg" style="display:none;">
+    <img src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg" style="display:none;" class="linkApp-hook">
     <div class="loading-mast">
         <img src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/loading-icon.png" class="loading-icon"/>
         <div class="loading-text">加载中<i>.</i><i>.</i><i>.</i></div>
     </div>
-    <div class="rule-mast">
+    <div class="rule-mast" style="display:none">
         <img src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/rule_text.jpg" class="rule_text"/>
         <div class="close-rule-btn"><img src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/close-btn.png"/></div>
     </div>
@@ -96,5 +94,7 @@
         <source src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/bg_music.mp3">
         <source src="http://wx.ooklady.com/imgs/xiaoqing/michiyang/bg_music.m4a">
     </audio>
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-body{height:100%;}
+body{height:100%;background:#000;}
 .main-frame{width:100%;height:100%;position: relative;overflow: hidden;}
 .frame-wrapper{width:100%;height:100%;position: absolute;top:0;left:0;overflow:hidden;}
 .frame{
@@ -72,7 +72,7 @@ body{height:100%;}
     font-size:30px;
     text-align: center;
     line-height: 70px;
-    z-index:50;
+    z-index:200;
 
     .loading-icon{
         width:3rem;

@@ -4,6 +4,7 @@ import o from "js/common";
 import Dan from "./classDan";
 import Line from "./classLine";
 import ILoading from "js/ILoading.min.js";
+import linkApp from "./linkApp";//正式：wx8b33756ca20faafa
 
 let $loadMast = $(".loading-mast");
 let $framewrapper = $(".frame-wrapper");
@@ -17,13 +18,25 @@ let $dans = $(".tip-hook");
 let dansLen = $dans.length;
 let isReq = 1;  //用来判断是否继续发送请求
 
-// const HOST="http://192.168.1.50:8081";
 const HOST="http://localhost:9000";
 const reqTipNum = 5;  //一次请求5条数据
 const loopTime = 5000; //毫秒计算，发送请求用
 const animLoop = 500; //弹幕轮询，幻灯片放映用 
 
-localStorage.removeItem("lastId");
+linkApp({
+    shareInfo:{
+        title:'MichiLiang',
+        desc:'你敢怎样 MichiLiang祝你表达自我',
+        shareImg:"http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg"
+    },
+    link:{
+        query:{
+            activityType:'-835'
+        },
+        button:$(".linkApp-hook")
+    }
+});
+// localStorage.removeItem("lastId");
 let lastId = localStorage.getItem("lastId") || "";
 //处理图片loading
 dealLoading(()=>{
@@ -44,7 +57,7 @@ function dealLoading(cb){
     //         cb();
     //     }
     // },5000);
-    l.loadingProcess((count,sum)=>{
+    l.loadingProcessMock((count,sum)=>{
         if(count === sum && lock){
             lock = false;
             $loadMast.hide();
