@@ -51,6 +51,7 @@ function linkApp(data){
         var sign = '';
         var shareUrl = location.href.split('#')[0];
         shareUrl = shareUrl.replace("type=app","");
+        var wxreadyFn = options.wxreadyFn;
         $.ajax({
             url: '/ajaxWxShare?url=' + encodeURIComponent(shareUrl),
             type: 'GET',
@@ -121,6 +122,7 @@ function linkApp(data){
         var imgUrl = options.shareImg || $('.act-container').find('img').eq(0).attr('src');
         var desc = options.desc ||  'OOK是全国首家女性首饰盒集享平台。甄选全球设计师饰品，引领时尚潮流，传播配饰文化。';
         wx.ready(function () {
+            wxreadyFn();
             // 8.3 批量隐藏菜单项
             wx.hideMenuItems({
                 menuList: [
@@ -164,6 +166,7 @@ function linkApp(data){
         });
 
         wx.error(function (res) {
+            
             alert(res.errMsg);
         });
     }

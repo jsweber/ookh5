@@ -27,7 +27,10 @@ linkApp({
     shareInfo:{
         title:'分享获得30元专属二维码',
         desc:'福利 | Michi Liang敢爱专场，助你表达自我',
-        shareImg:"http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg"
+        shareImg:"http://wx.ooklady.com/imgs/xiaoqing/michiyang/last-page-bg.jpg",
+        wxreadyFn(){
+         
+        }
     },
     link:{
         query:{
@@ -36,6 +39,23 @@ linkApp({
         button:$(".linkApp-hook")
     }
 });
+
+audioAutoPlay("music")
+function audioAutoPlay(id){
+	var audio = document.getElementById(id),
+		play = function(){
+			audio.play();
+			document.removeEventListener("touchstart",play, false);
+		};
+	audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {
+    	play();
+    }, false);
+    document.addEventListener("touchstart",play, false);
+}
 // localStorage.removeItem("lastId");
 let lastId = localStorage.getItem("lastId") || "";
 //处理图片loading
