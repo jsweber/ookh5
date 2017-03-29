@@ -22,7 +22,7 @@
     <body id="app">
         <ul class="main clearfix">
             <li class="left">
-                <a href="javascript:;" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                <a :href="'http://wx.ooklady.com/wechat/item/product_info?productId='+item.id" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}">
                     <img :src="item.url">
                     <div class="product-wrapper">
                         <div class="name">{{item.desc}}</div>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="right">
-                <a href="javascript:;" class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                <a :href="'http://wx.ooklady.com/wechat/item/product_info?productId='+item.id"  class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}">
                     <img :src="item.url">
                     <div class="product-wrapper">
                         <div class="name">{{item.desc}}</div>
