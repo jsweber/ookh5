@@ -1,5 +1,50 @@
 @import './lib/css/reset.scss';
+@function rem($px){
+    @return $px/640*16rem;
+}
+
 .main{
     width:100%;
+}
+.left,.right{
+    width:7.6rem;
+    margin-left:0.26rem;
+    padding-top:0.26rem;
+    float:left;
+}
+.item{
+    display:block;
+    width:7.6rem;
+    position: relative;
+    padding-bottom:rem(116);
+    overflow: hidden;
+    img{
+        display:block;
+        width:100%;
+    }
+
+    .product-wrapper{
+        position: absolute;
+        bottom:0;left:0;
+        width:100%;
+        height:rem(116);
+    }
+
+    .name{line-height: 1.3rem;font-weight: bold;font-size:rem(24);text-indent: 0.3rem;}
+    .product-info{
+        line-height: 1rem;color:#8b8b8b;
+        .brand{margin-left:0.3rem;}
+        .local{float:right;margin-right:0.5rem;}
+    }
 
 }
+
+.prompt{
+    display:none;
+    width:100%;
+    padding-bottom:1rem;
+    text-align: center;
+    font-size:0.5rem;
+    line-height: 1.2rem;
+}
+

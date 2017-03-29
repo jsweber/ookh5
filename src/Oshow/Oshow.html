@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="utf-8">
     <title>Oshow</title>
@@ -16,11 +17,36 @@
             html.setAttribute('style', 'font-size:' + (doc.documentElement.clientWidth / df_width * df_fs) + 'px');
         })();
     </script>
-</header>
-<body>
-    <ul class="main">
-        <li class="item"></li>
-        <li class="item"></li>
-    </ul>
-</body>
+    </header>
+
+    <body id="app">
+        <ul class="main clearfix">
+            <li class="left">
+                <a href="javascript:;" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                    <img :src="item.url">
+                    <div class="product-wrapper">
+                        <div class="name">{{item.desc}}</div>
+                        <div class="product-info">
+                            <span class="brand">{{item.brand}}</span>
+                            <span class="local">{{item.origin}}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="right">
+                <a href="javascript:;" class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                    <img :src="item.url">
+                    <div class="product-wrapper">
+                        <div class="name">{{item.desc}}</div>
+                        <div class="product-info">
+                            <span class="brand">{{item.brand}}</span>
+                            <span class="local">{{item.origin}}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="prompt" v-el:prompt>没有数据</div>
+    </body>
+
 </html>
