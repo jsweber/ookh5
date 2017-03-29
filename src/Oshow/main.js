@@ -3,7 +3,10 @@ import Vue from "../../lib/js/vue.js";
 import waterfall from "../../lib/js/vue-waterfall.min.js";
 import getItems from "./getItems";
 
+let doc = document, win = window;
+// let index = parseInt(localStorage.getItem("flow_index")) || 1;
 let index = 1;
+let app = doc.getElementById("app");
 var vm = new Vue({
     el: "#app",
     data() {
@@ -61,10 +64,18 @@ var vm = new Vue({
                     self.isBusy = false;
                 });
             })
+        },
+        link(id) {
+            // localStorage.setItem("flow_index", index);
+            // localStorage.setItem("flow_html", app.innerHTML);
+            win.location.href = `http://wx.ooklady.com/wechat/item/product_info?productId=${id}`;
         }
     },
     created() {
         let self = this;
+        // if (localStorage.getItem("flow_html")) {
+        //     app.innerHTML = localStorage.getItem("flow_html")
+        // }
         getItems(index, (err, arr) => {
             if (err) {
                 console.error(err);
@@ -79,7 +90,6 @@ var vm = new Vue({
     }
 });
 
-let doc = document, win = window;
 win.addEventListener('scroll', function () {
     var scrollTop = doc.documentElement.scrollTop || doc.body.scrollTop
     if (scrollTop + win.innerHeight > doc.body.clientHeight - 30) {

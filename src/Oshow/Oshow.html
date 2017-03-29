@@ -18,11 +18,10 @@
         })();
     </script>
     </header>
-
     <body id="app">
-        <ul class="main clearfix">
+        <ul class="main clearfix" v-el:main-wrapper>
             <li class="left">
-                <a :href="'http://wx.ooklady.com/wechat/item/product_info?productId='+item.id" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                <a @click="link(item.id)" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}">
                     <img :src="item.url">
                     <div class="product-wrapper">
                         <div class="name">{{item.desc}}</div>
@@ -34,7 +33,7 @@
                 </a>
             </li>
             <li class="right">
-                <a :href="'http://wx.ooklady.com/wechat/item/product_info?productId='+item.id"  class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                <a @click="link(item.id)" class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}">
                     <img :src="item.url">
                     <div class="product-wrapper">
                         <div class="name">{{item.desc}}</div>
@@ -48,5 +47,4 @@
         </ul>
         <div class="prompt" v-el:prompt>没有数据</div>
     </body>
-
 </html>
