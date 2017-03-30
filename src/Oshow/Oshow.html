@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="en">
     <meta charset="utf-8">
     <title>Oshow</title>
@@ -21,7 +20,7 @@
     <body id="app">
         <ul class="main clearfix" v-el:main-wrapper>
             <li class="left">
-                <a @click="link(item.id)" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                <a @click="link(item.id)" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}" track-by="$index">
                     <img :src="item.url">
                     <div class="product-wrapper">
                         <div class="name">{{item.desc}}</div>
@@ -33,7 +32,7 @@
                 </a>
             </li>
             <li class="right">
-                <a @click="link(item.id)" class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}">
+                <a @click="link(item.id)" class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}" track-by="$index">
                     <img :src="item.url">
                     <div class="product-wrapper">
                         <div class="name">{{item.desc}}</div>
