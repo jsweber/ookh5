@@ -77,6 +77,7 @@ var vm = new Vue({
         //     app.innerHTML = localStorage.getItem("flow_html")
         // }
         getItems(index, (err, arr) => {
+            $(".main").css("opacity",1);
             if (err) {
                 console.error(err);
                 return;
@@ -96,6 +97,8 @@ win.addEventListener('scroll', function () {
         vm.addItems();
     }
 })
-
+$(".close").click(function(){
+    location.href = "http://wx.ooklady.com/wechat/index";
+})
 
 

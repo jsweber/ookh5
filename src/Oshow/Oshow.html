@@ -23,11 +23,11 @@
                 <a @click="link(item.id)" class="item" v-for="item in leftItems" :style="{height:(7.6/item.ratio)+'rem'}" track-by="$index">
                     <img :src="item.url">
                     <div class="product-wrapper">
-                        <div class="name">{{item.desc}}</div>
                         <div class="product-info">
                             <span class="brand">{{item.brand}}</span>
                             <span class="local">{{item.origin}}</span>
                         </div>
+                        <div class="name">{{item.desc}}</div>
                     </div>
                 </a>
             </li>
@@ -35,15 +35,16 @@
                 <a @click="link(item.id)" class="item" v-for="item in rightItems" :style="{height:(7.6/item.ratio)+'rem'}" track-by="$index">
                     <img :src="item.url">
                     <div class="product-wrapper">
-                        <div class="name">{{item.desc}}</div>
                         <div class="product-info">
                             <span class="brand">{{item.brand}}</span>
                             <span class="local">{{item.origin}}</span>
                         </div>
+                        <div class="name">{{item.desc}}</div>
                     </div>
                 </a>
             </li>
         </ul>
         <div class="prompt" v-el:prompt>没有数据</div>
+        <img src="http://wx.ooklady.com/imgs/xiaoqing/wxolady/close-btn.png" class="close" v-el:close>
     </body>
 </html>

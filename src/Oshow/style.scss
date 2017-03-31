@@ -5,6 +5,7 @@
 
 .main{
     width:100%;
+    opacity:0;
 }
 .left,.right{
     width:7.6rem;
@@ -16,7 +17,7 @@
     display:block;
     width:7.6rem;
     position: relative;
-    padding-bottom:rem(116);
+    padding-bottom:2rem;
     overflow: hidden;
     img{
         display:block;
@@ -27,17 +28,17 @@
         position: absolute;
         bottom:0;left:0;
         width:100%;
-        height:rem(116);
+        height:2rem;
+        font-size:0.5rem;
         background:#fff;
     }
 
-    .name{line-height: 1.3rem;font-weight: bold;font-size:rem(24);text-indent: 0.3rem;}
+    .name{line-height: 0.9rem;font-weight: bold;font-size:0.5rem;text-indent: 0.3rem;}
     .product-info{
         line-height: 1rem;color:#8b8b8b;
         .brand{margin-left:0.3rem;}
         .local{float:right;margin-right:0.5rem;}
     }
-
 }
 
 .prompt{
@@ -48,4 +49,9 @@
     font-size:0.5rem;
     line-height: 1.2rem;
 }
-
+.close{
+    width:rem(88);
+    position: fixed;
+    left:0.5rem;
+    top:0.5rem;
+}
