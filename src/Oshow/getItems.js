@@ -1,6 +1,6 @@
 function getItems(index=1, cb,pages=8) {
     $.ajax({
-        url: `http://ooklady.com:8418/public/ook/item/shareList?pageIndex=${index}&pageSize=${pages}`,
+        url: `http://ooklady.com:8090/public/ook/item/shareList?pageIndex=${index}&pageSize=${pages}`,
         dataType: "json",
         type: "get",
         success(res) {
