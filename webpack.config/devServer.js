@@ -8,7 +8,7 @@ var tips = mock.data;
 var server = {
     contentBase:path.resolve(__dirname,"../dist"),
     publicPath:"/",
-    host:"192.168.73.55",
+    host:"localhost",
     port:9000,
     historyApiFallback:true,
     compress:true,
