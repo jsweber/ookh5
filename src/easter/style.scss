@@ -95,8 +95,98 @@ body,html{
             width:rem(60);
             margin:1rem auto 0;
         }
-
     }
-
 }
 
+.game{
+    z-index:8;
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/easer/landing-bg.png) no-repeat;
+    background-size:cover;
+
+    .landing-grass{
+        width:100%;
+        position: absolute;
+        left:0;
+        bottom:0;
+    }
+
+    .prize-wrapper{
+        display:-webkit-flex;
+        display:flex;
+        width:rem(540);
+        height:rem(300);
+        margin:rem(170) 0 0 rem(78);
+        
+
+        .prize-item{
+            flex:1;
+            height:100%;
+            position: relative;
+
+            .hammer{
+                width:rem(92);
+                position: absolute;
+                top:0;
+                right:0;
+                -webkit-transform-origin: right bottom;
+                transform-origin: right bottom;
+            }
+            .za{-webkit-animation: za-ani 0.4s linear forwards;animation: za-ani 0.4s linear forwards;}
+            @keyframes za-ani{
+                0%{transform: rotate(0);}
+                70%{transform: rotate(60deg);}
+                100%{transform:rotate(-25deg)}
+            }
+            @-webkit-keyframes za-ani{
+               0%{transform: rotate(0);}
+                70%{transform: rotate(60deg);}
+                100%{transform:rotate(-25deg)}
+            }
+            .egg{
+                width:rem(156);
+                position: absolute;
+                bottom:0;
+                left:0;
+            }
+        }
+    }
+}
+.result{
+     z-index:7;
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/easer/landing-bg.png) no-repeat;
+    background-size:cover;
+
+    .result{
+        width:100%;
+    }
+    .result-grass{
+        width:100%;
+        position: absolute;
+        left:0;
+        bottom:0;
+    }
+    .go-index{
+        display:block;
+        width:rem(200);
+        height:rem(70);
+        background:#f4a335;
+        line-height: rem(70);
+        text-align: center;
+        font-size:0.6rem;
+        color:#fff;
+        border-radius: 10px;
+        margin:-6rem auto 0;
+        letter-spacing: 1px;
+    }
+    .prize-prompt{
+        position: absolute;
+        top:3rem;
+        left:0;
+        width:100%;
+        line-height: 1rem;
+        font-size:0.8rem;
+        color:#ff9a10;
+        text-align: center;
+        font-weight: 500;
+    }
+}
