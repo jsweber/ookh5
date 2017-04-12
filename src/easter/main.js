@@ -62,7 +62,7 @@ function decidPrice(){
 }
 $(".go-index").on("click",()=>{
     if(isApp()){
-        location,href = "native://Home";
+        location.href = "native://Home";
     }else{
         location.href = "http://wx.ooklady.com/wechat/index";
     }
