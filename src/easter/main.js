@@ -1,5 +1,19 @@
 import style from './style.scss'
 import iLoading from "js/ILoading.min.js";
+import isApp from "js/isApp";
+import setWX from "js/wxShare";
+
+setWX({
+    title: " ",
+    env:"develop",
+    desc: "O小姐福利，快来领取你的彩蛋",
+    shareImg: "http://wx.ooklady.com/imgs/xiaoqing/easer/loading-eag.png",
+    shareLink: "/view/wxpages/activitypage/easter/easter.html",
+    wxshareCallback: function () {
+        
+    }
+});
+
 //loading
 dealLoading(()=>{
     $(".landing").show();
@@ -46,6 +60,13 @@ function decidPrice(){
     $("#num").html(selected.prize);
     $(".use-rule").html(selected.text);
 }
+$(".go-index").on("click",()=>{
+    if(isApp()){
+        location,href = "native://Home";
+    }else{
+        location.href = "http://wx.ooklady.com/wechat/index";
+    }
+});
 //砸蛋
 $(".prize-item").on("click",function(){
     $(this).find(".hammer").css("opacity",1)
