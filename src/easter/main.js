@@ -5,7 +5,7 @@ import setWX from "js/wxShare";
 
 setWX({
     title: " ",
-    env:"production",
+    env:"develop",
     desc: "O小姐福利，快来领取你的彩蛋",
     shareImg: "http://wx.ooklady.com/imgs/xiaoqing/easer/loading-eag.png",
     shareLink: "/view/wxpages/activitypage/easter/easter.html",

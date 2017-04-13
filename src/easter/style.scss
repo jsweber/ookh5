@@ -29,7 +29,19 @@ body,html{
         letter-spacing: 1px;
     }
 }
-
+ .go-index{
+        display:block;
+        width:rem(200);
+        height:rem(70);
+        background:#f4a335;
+        line-height: rem(70);
+        text-align: center;
+        font-size:0.6rem;
+        color:#fff;
+        border-radius: 10px;
+        margin:-6rem auto 0;
+        letter-spacing: 1px;
+    }
 .landing{
     z-index:9;
     background:url(http://wx.ooklady.com/imgs/xiaoqing/easer/landing-bg.png) no-repeat;
@@ -183,19 +195,6 @@ body,html{
         position: absolute;
         left:0;
         bottom:0;
-    }
-    .go-index{
-        display:block;
-        width:rem(200);
-        height:rem(70);
-        background:#f4a335;
-        line-height: rem(70);
-        text-align: center;
-        font-size:0.6rem;
-        color:#fff;
-        border-radius: 10px;
-        margin:-6rem auto 0;
-        letter-spacing: 1px;
     }
     .prize-prompt{
         position: absolute;
