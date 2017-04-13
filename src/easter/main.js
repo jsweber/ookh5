@@ -5,7 +5,7 @@ import setWX from "js/wxShare";
 
 setWX({
     title: " ",
-    env:"develop",
+    env:"production",
     desc: "O小姐福利，快来领取你的彩蛋",
     shareImg: "http://wx.ooklady.com/imgs/xiaoqing/easer/loading-eag.png",
     shareLink: "/view/wxpages/activitypage/easter/easter.html",
@@ -13,6 +13,11 @@ setWX({
         
     }
 });
+if(!localStorage.getItem("_FIRST_ENTER_EASTER")){
+    localStorage.setItem("_FIRST_ENTER_EASTER",1);
+}else{
+    $(".not-first-enter").show();
+}
 
 //loading
 dealLoading(()=>{

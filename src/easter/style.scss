@@ -59,6 +59,24 @@ body,html{
         margin:rem(38) auto 0;
         letter-spacing: 1px;
     }
+    .not-first-enter{
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:10;
+        background:rgba(0,0,0,0.7);
+        display:none;
+
+        .prompt{
+            text-align: center;
+            font-size:0.7rem;
+            color:#fff;
+            margin-top:10rem;
+            letter-spacing: 1px;
+        }
+    }
 
     .rule{
         width:100%;
