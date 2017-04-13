@@ -13,10 +13,8 @@ setWX({
         
     }
 });
-if(!localStorage.getItem("_FIRST_ENTER_EASTER")){
-    localStorage.setItem("_FIRST_ENTER_EASTER",1);
-}else{
-    $(".not-first-enter").show();
+if(localStorage.getItem("_FIRST_ENTER_EASTER2")){
+     $(".not-first-enter").show();
 }
 
 //loading
@@ -74,6 +72,7 @@ $(".go-index").on("click",()=>{
 });
 //砸蛋
 $(".prize-item").on("click",function(){
+     localStorage.setItem("_FIRST_ENTER_EASTER2",1);
     $(this).find(".hammer").css("opacity",1)
     .addClass("za")
     .on("webkitAnimationEnd animationEnd",()=>{
