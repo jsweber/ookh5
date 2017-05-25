@@ -14,6 +14,8 @@
             var df_width = 320, df_dpr = 1, df_fs = 20, win = window, doc = document, html = doc.getElementsByTagName('html')[0];
             html.setAttribute('data-dpr', win.devicePixelRatio);
             html.setAttribute('style', 'font-size:' + (doc.documentElement.clientWidth / df_width * df_fs) + 'px');
+            //ook内部统计网页访问数据，不需要回调处理，忽略网络问题
+            $.post("http://dev.ooklady.com/public/ook/access", {url: location.href})
         })();
     </script>
 </head>

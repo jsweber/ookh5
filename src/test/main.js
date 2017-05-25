@@ -1,8 +1,5 @@
 import style from './style.scss';
 
+$("#box").height(window.innerHeight);
 
-start();
-async function start(){
-    let r = await Promise.resolve("123");
-    console.log(r);
-}
+
