@@ -1,9 +1,265 @@
 @import './lib/css/reset.scss';
 body,.swiper-container,.swiper-wrapper,.swiper-slide{
     height:100%;
+    background:#fee931;
 }
+
+@function rem($px){
+    @return $px/750*16rem;
+}
+
+@mixin page-bg($url){
+    background:url($url) no-repeat;
+    background-size:100%;
+}
+@mixin bg-cover($url){
+     background:url($url) no-repeat center;
+     background-size:auto 100%;   
+}
+.mast{
+    width:100%;height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.7);
+}
+
 .index{
-    background:#ccc;
+    @include page-bg("http://wx.ooklady.com/imgs/xiaoqing/bigdata/page-home.jpg");
+    .woman-hand{
+        width:rem(230);
+        height:rem(260);
+        position: absolute;
+        top:16.5rem;
+        left:1.8rem;
+        transform-origin: 5rem bottom;
+    }
+    .ears{
+         width:rem(40);
+        height:rem(140);
+        position: absolute;
+        top:10.3rem;
+        left:1.6rem;
+        transform-origin:top center;
+    }
+}
+.shake-ears{
+    animation:shakeear 1s linear infinite;
+}
+$eardeg:5deg;
+@keyframes shakeear{
+     0%{transform:rotate(0deg)}
+    25%{transform:rotate($eardeg)}
+    75%{transform:rotate(-$eardeg)}
+    100%{transform: rotate(0deg)}
 }
 
+.shake-hand{
+    animation:shakehand 2.5s linear infinite;
+}
+$handdeg:5deg;
+@keyframes shakehand{
+    0%{transform:rotate(0deg)}
+    25%{transform:rotate($handdeg)}
+    75%{transform:rotate(-$handdeg)}
+    100%{transform: rotate(0deg)}
+}
 
+.down-icon{
+    width:rem(40);
+    height:rem(40);
+    position: absolute;
+    bottom:rem(35);
+    left:(16rem - rem(40)) /2;
+    @include page-bg("http://wx.ooklady.com/imgs/xiaoqing/bigdata/arrow-down1.jpg");
+}
+.down-icon2{
+    width:rem(40);
+    height:rem(40);
+    position: absolute;
+    bottom:rem(35);
+    left:(16rem - rem(40)) /2;
+    @include page-bg("http://wx.ooklady.com/imgs/xiaoqing/bigdata/arrow-down2.jpg");
+}
+.down-animation{
+    animation: down 2s infinite;
+}
+@keyframes down{
+    0%{transform: translate3d(0,0,0)}
+    100%{transform: translate3d(0,-0.6rem,0)}
+}
+
+.music-icon{
+    width:26px;
+    height:22px;
+    position: absolute;
+    top:0.6rem;right:0.2rem;
+    z-index:9999;
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/bigdata/yinyue.png) no-repeat center;
+    background-size:auto 100%; 
+}
+.rotate-animation{
+    animation:musicrotate  2.5s linear infinite;
+}
+@keyframes musicrotate{
+    100%{transform:rotate(360deg);}
+}
+
+.slider2{
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/2.jpg");
+}
+.slider3{
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/3.jpg");
+}
+.slider4{
+    .woman-wrapper{
+        width:12rem;
+        height:14.5rem;
+        margin:6.5rem auto 0;
+        overflow: hidden;
+    }
+    .woman{
+        width:4rem;
+        height:7.25rem;
+        float:left;
+    }
+    .detail-mast{
+        display:none;
+        @extend .mast;
+    }
+    .detail-wrapper{
+        width:rem(626);
+        height:rem(880);
+        margin:4rem auto 0;
+        position: relative;
+        overflow: hidden;
+        @include page-bg("http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman-info.png");
+    }
+    .location-icon{
+        width:3rem;
+        height:1rem;
+        line-height: 1rem;
+        padding-left:0.8rem;
+        position: absolute;
+        top:1rem;
+        left:1.2rem;
+        font-size:.4rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/bigdata/location-icon.png) no-repeat left center;
+        background-size:0.5rem;
+    }
+
+    .woman-head{
+        display:block;
+        width:rem(200);
+        height:rem(200);
+        margin:1.5rem auto 0;
+    }
+    .solgn{
+        margin:0.5rem auto 0;
+        line-height: 1rem;
+        font-size:0.6rem;
+        text-align: center;
+        strong{
+            font-size:0.7rem;
+        }
+    }
+    .woman-close{
+        width: rem(70);
+        height:rem(70);
+        position: absolute;
+        top:0rem;
+        right:0rem;
+    }
+    .product{
+        display:block;
+        width:rem(470);
+        margin:0.5rem auto 0;
+    }
+    .product-prompt{
+        font-size:.5rem;
+        text-align: center;
+        margin-top:1rem;
+    }
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/4.jpg");
+}
+.slider5{
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/5.jpg");
+}
+.slider6{
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/6.jpg");
+}
+.slider7{
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/7.jpg");
+}
+.slider8{
+    .nav-tab{
+        display: -webkit-flex;
+        display:flex;
+        width:rem(600);
+        height:rem(62);
+        margin:7.5rem auto 0;
+        background:#000;
+        color:#ffeb00;
+    }
+    .tab{
+        flex:1;
+        line-height: 1.2rem;;
+        text-align: center;
+    }
+    .active{
+        color:#ee1a40;
+        border-bottom:0.1rem solid #ee1a40;
+    }
+     .tab:nth-of-type(2){
+        flex:0 0 3rem;
+     }
+     .nav-content{
+         width:rem(600);
+         height:rem(660);
+         overflow: hidden;
+         margin:0.3rem auto 0; 
+         position: relative;
+     }
+     .content{
+         width:100%;
+         height:100%;
+         position: absolute;
+         top:0;
+         left:0;
+         opacity: 0;
+     }
+
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/8.jpg");
+}
+.slider9{
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/9.jpg");
+}
+.slider10{
+    #first{
+        width:5rem;
+        height:2rem;
+        position: absolute;
+        bottom:3.2rem;
+        left:3rem;
+    }
+    #share{
+         width:5rem;
+        height:2rem;
+        position: absolute;
+        bottom:3.2rem;
+        right:2.8rem;
+    }
+    .share-mask{
+        display:none;
+        @extend .mast;
+    }
+    .share-img{
+        width:rem(263);
+        height:rem(333);
+        position: absolute;
+        top:1rem;
+        right:1rem;
+    }
+
+    @include bg-cover("http://wx.ooklady.com/imgs/xiaoqing/bigdata/10.jpg");
+}

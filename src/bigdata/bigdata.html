@@ -2,13 +2,14 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-    <title>bigdata</title>
+    <title>谁在OOK购物？</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="icon" href="http://wx.ooklady.com/easyui/wechat/images/favicon.ico" type="image/x-icon">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
         (function () {
             var df_width = 320, df_dpr = 1, df_fs = 20, win = window, doc = document, html = doc.getElementsByTagName('html')[0];
@@ -20,10 +21,71 @@
 <body>
 <div class="swiper-container">
   <div class="swiper-wrapper">
-    <div class="swiper-slide index">slider1</div>
-    <div class="swiper-slide">slider2</div>
-    <div class="swiper-slide">slider3</div>
+        <div class="swiper-slide index">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman-hand.png" class="woman-hand shake-hand">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/ears.png" class="ears shake-ears">
+            <span class="down-icon down-animation"></span>
+        </div>
+        <div class="swiper-slide slider2"><span class="down-icon2 down-animation"></span></div>
+        <div class="swiper-slide slider3"><span class="down-icon2 down-animation"></span></div>
+        <div class="swiper-slide slider4">
+            <span class="down-icon2 down-animation"></span>
+            <ul class="woman-wrapper">
+                <li class="woman"></li>
+                <li class="woman"></li>
+                <li class="woman"></li>
+                <li class="woman"></li>
+                <li class="woman"></li>
+                <li class="woman"></li>
+            </ul>
+            <div class="detail-mast">
+                <div class="detail-wrapper">
+                    <img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman-close.png" class="woman-close">
+                    <span class="location-icon" id="location">重庆</span>
+                    <img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman1.png" class="woman-head" id="woman-head">
+                    <p class="solgn">
+                        <strong id="name">晨曦自</strong><br/>
+                        <span id="solgn">敢大胆的mix</span>
+                    </p>
+                    <img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/product1.png" class="product" id="product">
+                    <p class="product-prompt">喜欢可以点击单品购买哦~</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide slider5"><span class="down-icon2 down-animation"></span></div>
+        <div class="swiper-slide slider6"><span class="down-icon2 down-animation"></span></div>
+        <div class="swiper-slide slider7"><span class="down-icon2 down-animation"></span></div>
+        <div class="swiper-slide slider8">
+            <span class="down-icon2 down-animation"></span>
+            <ul class="nav-tab">
+                <li class="tab active">北欧</li>
+                <li class="tab">澳大利亚</li>
+                <li class="tab">法国</li>
+                <li class="tab">韩国</li>
+                <li class="tab">台湾</li>
+                <li class="tab">美国</li>
+            </ul>
+            <ul class="nav-content">
+                <li class="content" style="opacity:1;"><img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/north.png" width="100%"></li>
+                <li class="content"><img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/aut.png" width="100%"></li>
+                <li class="content"><img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/fre.png" width="100%"></li>
+                <li class="content"><img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/korea.png" width="100%"></li>
+                <li class="content"><img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/taiwan.png" width="100%"></li>
+                <li class="content"><img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/ame.png" width="100%"></li>
+            </ul>
+        </div>  
+        <div class="swiper-slide slider9"><span class="down-icon2 down-animation"></span></div>
+        <div class="swiper-slide slider10">
+            <span class="down-icon2 down-animation"></span>
+            <a href="javascript:;" id="first"></a>
+            <a href="javascript:;" id="share"></a>
+            <div class="share-mask">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/share-mask.png" class="share-img">
+            </div>
+        </div>
   </div>
 </div>
+<span class="music-icon rotate-animation" id="music-btn" data-status="1"></span>
+<audio src="http://wx.ooklady.com/imgs/xiaoqing/bigdata/bg.mp3" autoplay id="music"></audio>
 </body>
 </html>

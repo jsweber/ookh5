@@ -1,0 +1,40 @@
+const data=  [
+    {
+        location:"武汉",
+        name:"doris",
+        sologn:"偏爱浪漫女人气息的饰品",
+        product:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/product1.png",
+        head:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman1.png"
+    },{
+        location:"川渝",
+        name:"陈希子",
+        sologn:"敢大胆的MIX，尝试各种风格",
+        product:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/product2.png",
+        head:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman2.png"
+    },{
+        location:"东北",
+        name:"自由行走的猫头鹰",
+        sologn:"日韩气息浓厚",
+        product:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/product3.png",
+        head:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman3.png"
+    },{
+        location:"北京",
+        name:"陈苍苍",
+        sologn:"追求有质感的配饰，舍得花钱",
+        product:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/product4.png",
+        head:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman4.png"
+    },{
+        location:"上海",
+        name:"三木三木呢",
+        sologn:"钟爱欧美风格，喜欢精致细腻",
+        product:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/product5.png",
+        head:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman5.png"
+    },{
+        location:"广东",
+        name:"无凡凡",
+        sologn:"喜欢时尚低价位的配饰",
+        product:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/product6.png",
+        head:"http://wx.ooklady.com/imgs/xiaoqing/bigdata/woman6.png"
+    }
+];
+export default data;
