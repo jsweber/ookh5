@@ -7,6 +7,7 @@
 <p>1.首先要去project.config.json 配置项目信息</p>
 <p>2.创建目录，然后会在src下生成你要的小项目，一个html，一个js，一个scss
 如果要生成多页面应用，则要创建多个，需要不断去改配置文件，以后会修改</p>
+
 ## 命令行
 <ol>
 <li>npm run create 初始化项目</li>
