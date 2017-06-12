@@ -4,7 +4,7 @@ import swiper from "js/swiper3.min.js"
 
 var swip = new Swiper('.swiper-container', {
     direction: 'vertical',
-    initialSlide :6
+    initialSlide :2
 });
 
 
