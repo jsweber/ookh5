@@ -122,8 +122,27 @@ html,body,.swiper-container,.swiper-wrapper,.swiper-slide{height:100%;}
         @include postl(130,0);
     }
     .product{
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/7product.png) no-repeat center center;
+        background-size:cover; 
         width:rem640(250);
+        height:rem640(385);
+        overflow: hidden;
         @include posbl(100,100);
+
+        .top{
+            width:100%;
+            height:rem640(200);
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .bottom{
+            width:100%;
+            height:rem640(200);
+            position: absolute;
+            bottom:0;
+            left:0;
+        }
     }
 }
 .back{
