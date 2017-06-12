@@ -15,11 +15,60 @@
             html.setAttribute('data-dpr', win.devicePixelRatio);
             html.setAttribute('style', 'font-size:' + (doc.documentElement.clientWidth / df_width * df_fs) + 'px');
             //ook内部统计网页访问数据，不需要回调处理，忽略网络问题
-            $.post("http://dev.ooklady.com/public/ook/access", {url: location.href})
+            // $.post("http://dev.ooklady.com/public/ook/access", {url: location.href})
         })();
     </script>
 </head>
 <body>
-    
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1go.png" class="go">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1ring.png" class="ring">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1pklist.png" class="pklist">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1neck.png" class="neck">
+            </div>
+            <div class="swiper-slide slide2">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2back.png" class="back">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2playground.png" class="playground">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2next.png" class="next">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2letter.png" class="letter">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2talk.png" class="talk">
+            </div>
+            <div class="swiper-slide slide3">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/3product.png" class="product">
+                 <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2back.png" class="back">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2playground.png" class="playground">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2next.png" class="next">
+            </div>
+            <div class="swiper-slide slide4">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2back.png" class="back">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/forest.png" class="playground">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2next.png" class="next">
+            </div>
+            <div class="swiper-slide slide5">
+                <div class="product">
+                    <a href="javascript:;" class="left"></a>
+                    <a href="javascript:;" class="right"></a>
+                </div>
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2back.png" class="back">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/forest.png" class="playground">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2next.png" class="next">
+            </div>
+            <div class="swiper-slide slide6">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/6talk.png" class="talk">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2back.png" class="back">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/grass.png" class="playground">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2next.png" class="next">
+            </div>
+            <div class="swiper-slide slide7">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/7text.png" class="text">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/7product.png" class="product">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2back.png" class="back">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/grass.png" class="playground">
+                <img src="http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2next.png" class="next">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

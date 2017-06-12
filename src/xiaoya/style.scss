@@ -1,1 +1,145 @@
 @import './lib/css/reset.scss';
+html,body,.swiper-container,.swiper-wrapper,.swiper-slide{height:100%;}
+.swiper-slide{
+    overflow: hidden;
+}
+@function rem($px){
+    @return $px/750*16rem;
+}
+@function rem640($px){
+    @return $px/640*16rem;
+}
+@mixin postl($w:0,$h:0){
+    position: absolute;
+    top:rem($h);
+    left:rem($w);
+}
+@mixin postr($w:0,$h:0){
+    position: absolute;
+    top:rem($h);
+    right:rem($w);
+}
+@mixin posbl($w:0,$h:0){
+    position: absolute;
+    bottom:rem($h);
+    left:rem($w);
+}
+@mixin posbr($w:0,$h:0){
+    position: absolute;
+    bottom:rem($h);
+    right:rem($w);
+}
+
+.slide1{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1bg.jpg) no-repeat center center;
+    background-size:cover;
+
+    .go{
+        width:rem(43);
+        @include posbl(42,42);
+    }
+
+    .ring{
+        width:rem(108);
+        @include posbl(170,100);            
+    }
+
+    .pklist{
+        width:rem(174);
+        @include posbr(60,130);
+    }
+
+    .neck{
+        width:rem(123);
+        @include posbl(140,270);
+    }
+}
+
+.slide2{
+     background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/2bg.jpg) no-repeat center center;
+    background-size:cover;
+
+    .letter{
+        width:rem(650);
+        @include postl(100,40);
+    }
+    .talk{
+        width:rem(280);
+        @include posbr(0,42);
+    }
+}
+.slide3{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/3bg.jpg) no-repeat center center;
+    background-size:cover;   
+
+    .product{
+        width:rem(400);
+        @include postl(100,0)
+    }  
+}
+.slide4{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/4bg.jpg) no-repeat center center;
+    background-size:cover;   
+}
+.slide5{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/5bg.jpg) no-repeat center center;
+    background-size:cover;   
+
+    .product{
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/5product.png) no-repeat center center;
+    background-size:cover; 
+        width:rem640(620);
+        height:rem640(690);
+        overflow: hidden;
+        @include posbr(0, 0);
+
+        .left{
+            width:8rem;
+            height:6rem;
+            @include posbl(30,50);
+        }
+        .right{
+            width:6rem;
+            height:4.5rem;
+            @include posbr(20, 300);
+        }
+    }
+}
+.slide6{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/6bg.jpg) no-repeat center center;
+    background-size:cover;   
+
+    .talk{
+        width:rem640(410);
+        @include posbr(0,0);
+    }
+}
+.slide7{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/7bg.jpg) no-repeat center center;
+    background-size:cover; 
+    .text{
+        width:rem640(325);
+        @include postl(130,0);
+    }
+    .product{
+        width:rem640(250);
+        @include posbl(100,100);
+    }
+}
+.back{
+    width:rem(40);
+    z-index:10;
+    @include postl(30,45);
+}
+
+.playground{
+    width:rem(43);
+    z-index:10;
+    @include postl(30,500);
+}
+
+.next{
+    width:rem(43);
+    z-index:10;
+    @include posbl(30,42);
+}
