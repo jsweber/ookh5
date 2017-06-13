@@ -48,15 +48,26 @@ window.onorientationchange = function(){
     }
 }
 
+$("#list-btn").on("click",function(){
+     if(isApp()){
+         location.href = "native://viewList?data="+ encodeURI({activityType:-948});
+    }else{
+        location.href = "http://wx.ooklady.com/wechat/products?activityType=-948";
+    }  
+});
+
 $(".btn-hook").on("click",link);
 function link(){
     let itemId = $(this).data("itemid");
     if(isApp()){
          location.href = "native://viewGood?data="+ encodeURI({tiD:itemId});
     }else{
-        location.href = "http://wx.ooklady.com/wechat/item/product_info?productId="+itemId;;
+        location.href = "http://wx.ooklady.com/wechat/item/product_info?productId="+itemId;
     }   
 }
+$(".slide1").on("touchstart",function(){
+    $("#music")[0].play();
+});
 
 $(".mast-close").on("click",function(){
     $(".mast").css("transform","translate3d(-100%,0,0)");
