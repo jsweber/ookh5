@@ -50,7 +50,7 @@ window.onorientationchange = function(){
 
 $("#list-btn").on("click",function(){
      if(isApp()){
-         location.href = "native://viewList?data="+ encodeURI({activityType:-948});
+         location.href = "native://viewList?data="+ encodeURI(JSON.stringify({activityType:-948}));
     }else{
         location.href = "http://wx.ooklady.com/wechat/products?activityType=-948";
     }  
@@ -60,7 +60,7 @@ $(".btn-hook").on("click",link);
 function link(){
     let itemId = $(this).data("itemid");
     if(isApp()){
-         location.href = "native://viewGood?data="+ encodeURI({tiD:itemId});
+         location.href = "native://viewGood?data="+ encodeURI(JSON.stringify({tiD:itemId}));
     }else{
         location.href = "http://wx.ooklady.com/wechat/item/product_info?productId="+itemId;
     }   
