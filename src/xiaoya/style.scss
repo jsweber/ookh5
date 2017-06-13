@@ -164,6 +164,60 @@ html,body,.swiper-container,.swiper-container2,.swiper-wrapper,.swiper-slide{hei
         }
     }
 }
+.slide8{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/8bg.jpg) no-repeat center center;
+    background-size:cover; 
+
+    .product{
+        width:100%;
+        width:rem640(320);
+        height:rem640(283);
+        position: absolute;
+        top:6rem;
+        left:2rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/8product.png) no-repeat center center;
+        background-size:contain; 
+    }
+}
+.slide9{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/9bg.jpg) no-repeat center center;
+    background-size:cover; 
+
+    .product{
+        width:100%;
+        width:rem640(370);
+        height:rem640(290);
+        position: absolute;
+        top:4rem;
+        left:1rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/9product.png) no-repeat center center;
+        background-size:contain; 
+    }
+}
+.slide10{
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/10bg.jpg) no-repeat center center;
+    background-size:cover;   
+
+    .product-list{
+        width:100%;
+        width:rem640(450);
+        height:rem640(810);
+        position: absolute;
+        bottom:1rem;
+        left:1rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/10title.png) no-repeat center center;
+        background-size:contain; 
+
+        a{
+            position: absolute;
+            left:1.5rem;
+            bottom:2rem;
+            width:3rem;
+            height:6rem;
+        }
+    }
+}
+
 .back{
     width:rem(40);
     z-index:10;

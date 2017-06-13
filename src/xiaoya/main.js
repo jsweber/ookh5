@@ -18,6 +18,7 @@ setWX({
 var swip = new Swiper('.swiper-container', {
     direction: 'vertical',
     noSwiping : true,
+    initialSlide:9
 });
 var swip2 = new Swiper('.swiper-container2', {
     direction : 'horizontal',
