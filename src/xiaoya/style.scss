@@ -52,7 +52,7 @@ html,body,.swiper-container,.swiper-container2,.swiper-wrapper,.swiper-slide{hei
     }
 
     .neck{
-         animation:rotate-anim 1.5s .5s infinite;
+        animation:rotate-anim 1.5s .5s infinite;
         width:rem(123);
         @include posbl(100,270);
     }
@@ -227,6 +227,13 @@ html,body,.swiper-container,.swiper-container2,.swiper-wrapper,.swiper-slide{hei
             height:6rem;
         }
     }
+    .go10{
+        width:rem640(120);
+        height:rem640(220);
+        position: absolute;
+        bottom:1.5rem;
+        left:1rem;
+    }
 }
 
 .back{
@@ -295,4 +302,12 @@ html,body,.swiper-container,.swiper-container2,.swiper-wrapper,.swiper-slide{hei
 .my{
         background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1my.jpg) no-repeat center center;
         background-size:cover;     
+}
+.next-anima{
+    animation:swiperanim 1s  infinite;
+}
+@keyframes swiperanim{
+    0%{transform:translate3d(0,0,0)}
+    50%{transform:translate3d(0,0.3rem,0)}
+    100%{transform:translate3d(0,0,0)} 
 }
