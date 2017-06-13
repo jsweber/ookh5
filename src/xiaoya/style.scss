@@ -40,19 +40,30 @@ html,body,.swiper-container,.swiper-container2,.swiper-wrapper,.swiper-slide{hei
     }
 
     .ring{
+        animation:rotate-anim 1s infinite;
         width:rem(108);
         @include posbl(170,100);            
     }
 
     .pklist{
+         animation:rotate-anim 0.8s .3s infinite;
         width:rem(174);
         @include posbr(60,130);
     }
 
     .neck{
+         animation:rotate-anim 1.5s .5s infinite;
         width:rem(123);
         @include posbl(100,270);
     }
+}
+.rotation{
+    animation:rotate-anim 1s infinite;
+}
+@keyframes rotate-anim{
+    0%{transform:rotate(0)}
+    50%{transform: rotate(-8deg)}
+    100%{transform:rotate(0)}
 }
 
 .slide2{
