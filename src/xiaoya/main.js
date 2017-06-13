@@ -19,8 +19,12 @@ var swip = new Swiper('.swiper-container', {
     direction: 'vertical',
     noSwiping : true,
 });
+var swip2 = new Swiper('.swiper-container2', {
+    direction : 'horizontal',
+    initialSlide:1
+});
 let nowPage = 0;
-let maxLen = $(".swiper-slide").length;
+let maxLen = $(".swiper-container .swiper-slide").length;
 //上一张页面
 $(".backBtn").on("click",function(){
     if(nowPage >0){
@@ -53,3 +57,17 @@ function link(){
         location.href = "http://wx.ooklady.com/wechat/item/product_info?productId="+itemId;;
     }   
 }
+
+$(".mast-close").on("click",function(){
+    $(".mast").css("transform","translate3d(-100%,0,0)");
+});
+$(".ring").on("click",function(){
+    $(".my").css("transform","translate3d(0,0,0)");
+});
+$(".pklist").on("click",function(){
+    $(".packing").css("transform","translate3d(0,0,0)");
+    $(".packing").show();
+});
+$(".neck").on("click",function(){
+    $(".what").css("transform","translate3d(0,0,0)");
+});

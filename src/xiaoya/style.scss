@@ -1,5 +1,5 @@
 @import './lib/css/reset.scss';
-html,body,.swiper-container,.swiper-wrapper,.swiper-slide{height:100%;}
+html,body,.swiper-container,.swiper-container2,.swiper-wrapper,.swiper-slide{height:100%;}
 .swiper-slide{
     overflow: hidden;
 }
@@ -51,7 +51,7 @@ html,body,.swiper-container,.swiper-wrapper,.swiper-slide{height:100%;}
 
     .neck{
         width:rem(123);
-        @include posbl(140,270);
+        @include posbl(100,270);
     }
 }
 
@@ -196,12 +196,38 @@ html,body,.swiper-container,.swiper-wrapper,.swiper-slide{height:100%;}
         width:16rem;
     }
 }
-.prompt{
+.mast{
     width:100%;
     height:100%;
     z-index:999;
     position: absolute;
     top:0;
     left:0;
-    background:rgba(0,0,0,0.7);
+    overflow: hidden;
+    background:#fff;
+    -webkit-transform:translate3d(-100%,0,0);
+    transform:translate3d(-100%,0,0);
+}
+.mast-close{
+    width:rem640(66);
+    @include postr(30, 30);
+}
+
+.what{
+    .what1{
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1what1.jpg) no-repeat center center;
+        background-size:cover; 
+    }
+    .what2{
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1what2.jpg) no-repeat center center;
+        background-size:cover; 
+    }
+}
+.packing{
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1packing.jpg) no-repeat center center;
+        background-size:cover;   
+}
+.my{
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/xiaoya/1my.jpg) no-repeat center center;
+        background-size:cover;     
 }
