@@ -6,7 +6,7 @@ import setWX from "js/wxShare"
 
 setWX({
     title: "跟随小雅&OOK探寻全球美饰",
-    env:"develop", //production
+    env:"production", //production
     desc: "跟随小雅&OOK探寻全球美饰",
     shareImg: "http://wx.ooklady.com/imgs/xiaoqing/xiaoya/share.jpg",
     shareLink: "http://wx.ooklady.com/view/wxpages/activitypage/xiaoya/xiaoya.html",
