@@ -2,6 +2,18 @@ import style from './style.scss'
 import swpercss from "scss/swiper3.min.scss"
 import swiper from "js/swiper3.min.js"
 import isApp from "js/isApp.js"
+import setWX from "js/wxShare"
+
+setWX({
+    title: "跟随小雅&OOK探寻全球美饰",
+    env:"develop", //production
+    desc: "跟随小雅&OOK探寻全球美饰",
+    shareImg: "http://wx.ooklady.com/imgs/xiaoqing/xiaoya/share.jpg",
+    shareLink: "http://wx.ooklady.com/view/wxpages/activitypage/xiaoya/xiaoya.html",
+    wxshareCallback: function () {
+        
+    }
+});
 
 var swip = new Swiper('.swiper-container', {
     direction: 'vertical',
