@@ -136,6 +136,16 @@
                 </ul>
             </div>
         </div>
+        <div class="part top1">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/3top1.jpg">
+            <a :href="item | getProductInfo" class="p{{$index+1}} topp" v-for="item in products.top4s"></a>
+        </div>
+        <div class="part top2">
+            <a :href="item | getProductInfo" class="topb" v-for="item in products.top5_12s"></a>
+        </div>
+        <a class="part" :href="products.discount | getProductList">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/4discount3.jpg">
+        </a>
 
     </div>
 </body>

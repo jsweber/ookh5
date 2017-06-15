@@ -2,7 +2,8 @@ import style from './style.scss'
 import Vue from "js/vue.js"
 import vue_filter from "js/vue.filter.js"
 import productComponent from "./component"
-
+import data from "./data"
+vue_filter();
 function init(hour){
     //June 13,2017 18:33:35  dateObject.getHours() 0-23
     const timePoint = [0,8,12,16,20,24];
@@ -46,7 +47,7 @@ function init(hour){
 let vue = new Vue({
     el:"#app",
     data:{
-
+        products:data,
     },
     components: {
       product : productComponent

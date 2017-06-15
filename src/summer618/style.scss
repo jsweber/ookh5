@@ -9,7 +9,7 @@
 .part{
     position: relative;
     overflow: hidden;
-
+    display:block;
     img{width:100%;display:block;}
 }
 
@@ -182,4 +182,48 @@
  .product-item-active{
     -webkit-transform: translate3d(100%,0,0);
     transform: translate3d(100%,0,0);
+}
+.top1{
+    .topp{
+        display:block;
+        width:100%;
+       position: absolute;
+       left:0;
+        background:rgba(0,0,0,0.5);
+        overflow: hidden;
+    }
+    .p1{
+        top:rem(480);
+        height:rem(520);
+    }
+    .p2{
+        top:rem(480+520);
+        height:rem(550);
+    }
+    .p3{
+        width:rem(340);
+        top:rem(480+520+550);
+        height:rem(476);
+    }
+    .p4{
+        width:rem(340);
+        left:rem(400);
+        top:rem(480+520+550);
+        height:rem(400);
+    }
+}
+.top2{
+    height:rem(1400);
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/3top2.jpg) no-repeat;
+    background-size:100%;
+    position: relative;
+
+    .topb{
+        width:rem(220);
+        height:rem(366);
+        float: left;
+        margin:0 0 rem(25) rem(25);
+        float:left;
+        background:rgba(0,0,0,0.5);
+    }
 }
