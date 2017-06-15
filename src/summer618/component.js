@@ -1,6 +1,6 @@
 import Vue from "js/vue.js"
 import vue_filter from "js/vue.filter.js"
-
+let component={};
 let productTemplate = 
 `<a  class="wrapper" :href="info.itemid | getProductInfo">
     <div class="img-wrapper">
@@ -24,7 +24,7 @@ let productTemplate =
     </div>
 </a>`;
 
-let product = Vue.extend({
+component.product = Vue.extend({
     template:productTemplate,
     props:{
         info:{
@@ -68,4 +68,88 @@ let product = Vue.extend({
     }
 });
 
-export default product;
+component.brand = Vue.extend({
+    template:`
+        <li class="brand-item">
+            <a class="brand-img" :href="brand.brandname | getProductList 'tag'">
+                <img :src="brand.brandimg">
+            </a>
+            <div class="product-wrapper">
+                <ul class="scroll-move" v-el:scroll>
+                    <li class="product" v-for="item in productlist">
+                        <a class="img-wrapper" :href="item.itemId | getProductInfo"><img :src="item.img" alt=""></a>
+                        <div class="text">￥{{item.fp}}</div>
+                    </li>
+                      <li class="productmore">
+                        <a :href="brand.brandname | getProductList 'tag'" class="more-btn">
+                            查看更多<br/>
+                            >
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    `,
+    props:{
+        brand:{
+            default(){
+                return {
+                    brandname:"",
+                    brandimg:""
+                }
+            },
+            type:Object
+        }
+    },
+    data(){
+        return {
+            productlist:[]
+        }
+    },
+    created(){
+        let self = this;
+        //避免和限时的请求一起发送
+        setTimeout(()=>{
+            $.ajax({
+                url:`http://dev.ooklady.com/public/ook/search/getBrandTop?brand=${self.brand.brandname}&pageSize=8`,
+                type:"get",
+                dataType:"json",
+                success(res){
+                    if(200 === res.code){
+                        self.productlist = res.data;
+                        self.$nextTick(()=>{
+                            let scroll = self.$els.scroll;
+                           scroll.style.width = (220 / 750) *16 * (self.productlist.length+1)+"rem";
+                           let startx = 0;
+                           let disx = 0;
+                           let diff = 0;
+                           let minDis = scroll.offsetWidth - window.innerWidth;
+                           scroll.addEventListener("touchstart",function(e){
+                               let touch = e.targetTouches[0];
+                               startx = touch.pageX;
+                               disx = diff;
+                           });
+                           scroll.addEventListener("touchmove",function(e){
+                               let touch = e.targetTouches[0];
+                               diff= touch.pageX - startx + disx;
+                               if(diff< -minDis - 50){
+                                    diff = -minDis;
+                               }else if( diff > 50){
+                                    diff = 0;
+                               }
+                               this.style.transform = this.style.WebkitTransform = `translate3d(${diff}px,0,0)`;
+                           });
+                        });
+                    }else{
+                        console.log(res.code);
+                    }
+                },
+                error(err){
+                    console.log(err0);
+                }
+            });
+        },1000)
+    }
+});
+
+export default component;

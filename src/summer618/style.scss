@@ -242,8 +242,101 @@
     background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/7gift.jpg) no-repeat;
     background-size:100%;
 }
+.brand-list{
+    .brand-item{
+        height:19rem;
+        width:100%;
+
+        .brand-img{
+            width:100%;
+            height:rem(526);
+            display:block;
+            overflow: hidden;
+            img{
+                display:block;
+                width:100%;
+            }
+        }
+        .product-wrapper{
+            width:100%;
+            height:8rem;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .scroll-move{
+            height:100%;
+            -webkit-transform:translate3d(0,0,0);
+            transform:translate3d(0,0,0);
+        }
+        .productmore{
+             -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width:rem(220);
+            padding-top:rem(30);
+            height:100%;
+            float:left;
+
+            .more-btn{
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                display:block;
+                width:rem(160);
+                height:rem(160);
+                margin:0 auto;
+                background:#fdf1f3;
+                text-align: center;
+                padding-top:rem(50);
+                line-height: rem(40);
+                font-size:12px;
+            }
+        }
+        .product{
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width:rem(220);
+            padding-top:rem(30);
+            height:100%;
+            float:left;
+            .img-wrapper{
+                display:block;
+                width:rem(200);
+                height:rem(200);
+                overflow: hidden;
+                margin:0 auto;
+                img{
+                    display:block;
+                    width:100%;
+                }
+            }
+            .text{
+                width:100%;
+                height:rem(60);
+                margin-top:rem(20);
+                line-height: rem(60);
+                text-align: center;
+                font-size:14px;
+            }
+        }
+    }
+}
 .bottom{
     height:rem(1520);
     background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/9bottom.jpg) no-repeat;
     background-size:100%;
+
+    .gotop{
+        width:4rem;
+        height:1rem;
+        position: absolute;
+        bottom:6rem;
+        left:6rem;
+    }
+    .goindex{
+        width:6rem;
+        height:2rem;
+        position: absolute;
+        bottom:2rem;
+        left:5rem;
+    }
 }

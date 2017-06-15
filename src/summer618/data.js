@@ -126,7 +126,42 @@ const data = {
     //trend
     trend:"-951",
     //gift
-    gift:""
+    gift:"",
+    //品牌列表
+    brand:[
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand1.jpg",
+            brandname:"Elizabeth Stone"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand2.jpg",
+            brandname:"Wanderlust Co"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand3.jpg",
+            brandname:"Caroline Najman"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand4.jpg",
+            brandname:"Michi Liang"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand5.jpg",
+            brandname:"Gold Philosophy"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand6.jpg",
+            brandname:"SHASHI"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand7.jpg",
+            brandname:"FABcessories"
+        },
+        {
+            brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand8.jpg",
+            brandname:"Vanessa Monney"
+        }
+    ]
 
 }
 export default data;

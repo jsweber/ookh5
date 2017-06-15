@@ -1,7 +1,7 @@
 import style from './style.scss'
 import Vue from "js/vue.js"
 import vue_filter from "js/vue.filter.js"
-import productComponent from "./component"
+import component from "./component"
 import data from "./data"
 vue_filter();
 function init(hour){
@@ -30,7 +30,7 @@ function init(hour){
     let index = setNowLimitProduct(hour);
     console.log("第几个"+index);
     if(index>0){
-        $timeItem.eq(index-1).addClass("time-grey");   
+        $timeItem.eq(index-1).addClass("time-grey").find(".text").html("已抢购");   
     }
     $timeItem.eq(index).addClass("time-active").addClass("time-click").find(".text").html("抢购中");
     $productItem.eq(index).addClass("product-item-active");
@@ -50,10 +50,14 @@ let vue = new Vue({
         products:data,
     },
     components: {
-      product : productComponent
+      product : component.product,
+      brand : component.brand
     },
     ready(){
         init(new Date().getHours());
+        $(".gotop").on("click",function(){
+            $(document).scrollTop(0);
+        });
     }
 });
 

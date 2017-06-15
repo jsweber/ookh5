@@ -39,11 +39,11 @@
                 <ul class="time-list">
                     <li class="time-item">
                         <span>0:00</span><br/>
-                        <span class="text">已抢购</span>
+                        <span class="text">敬请期待</span>
                     </li>
                     <li class="time-item">
                         <span>8:00</span><br/>
-                        <span class="text">抢购中</span>
+                        <span class="text">敬请期待</span>
                     </li>
                     <li class="time-item">
                         <span>12:00</span><br/>
@@ -83,7 +83,7 @@
         <!-- / 3折扣 -->
         <!--  趋势 -->
         <div class="part trend">
-    
+            <a href="javascript:;" ></a>
         </div>
         <!-- / 趋势 -->
         <!-- oshow -->
@@ -96,10 +96,15 @@
         </div>
         <!-- /礼物 -->
         <!-- 品牌 -->
-        <div class="brand"></div>
+        <ul class="part brand-list">
+            <brand :brand="item" v-for="item in products.brand"></brand>
+        </ul>
         <!-- /品牌 -->
         <!-- bottom -->
-        <div class="bottom"></div>
+        <div class="part bottom">
+            <a href="javascript:;" class="gotop"></a>
+            <a :href="'' | goIndex" class="goindex"></a>
+        </div>
         <!-- /bottom -->
     </div>
 </body>
