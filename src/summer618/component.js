@@ -1,9 +1,11 @@
 import Vue from "js/vue.js"
+import vue_filter from "js/vue.filter.js"
+
 let productTemplate = 
-`<a  class="wrapper" :href="info.href">
+`<a  class="wrapper" :href="info.itemid | getProductInfo">
     <div class="img-wrapper">
         <img :src="info.url" alt="">
-        <div class="sell-out" v-show="nowsell === 5">还有<br/>机会</div>  
+        <div class="sell-out" v-show="stock === 0">还有<br/>机会</div>  
     </div>
     <div class="product-info">
         <div class="name">{{info.name}}</div>
@@ -29,7 +31,7 @@ let product = Vue.extend({
             default(){
                 return {
                     href:"",
-                    itemId:"",
+                    itemid:"",
                     url:"null",
                     name:"null",
                     brand:"null",
@@ -38,23 +40,31 @@ let product = Vue.extend({
                 }
             },
             type:Object
-        },
-        nowsell:{
-            default(){
-                return 0
-            },
-            type:Number
         }
     },
     data(){
         return {
-            
+            stock:0
         }
     },
     computed: {
         propress(){
-            return parseInt((this.nowsell / 5)*100)+"%";
+            return parseInt(((5-this.stock)/ 5)*100)+"%";
         }
+    },
+    created () {
+        let self = this;
+        $.ajax({
+            url:'http://dev.ooklady.com/wechat/item/ajaxStock?itemId='+this.info.itemid,
+            type:"get",
+            dataType:"json",
+            success(res){
+                self.stock = typeof res.stock !== 'number' ? parseInt(res.stock):res.stock;
+            },
+            error(err){
+                console.log(err);
+            }
+        });
     }
 });
 

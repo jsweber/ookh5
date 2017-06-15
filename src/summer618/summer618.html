@@ -23,8 +23,14 @@
 <body>
     <div id="app">
         <div class="part">
-            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/1all.jpg">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/0cover.jpg">
         </div>
+        <!-- all -->
+        <a class="part" :href="' ' | getProductList ' '">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/1all.jpg">
+        </a>
+        <!-- /all -->
+        <!-- 限时购 -->
         <div class="part limit-time">
             <div class="title">
                 <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/2limit_time.jpg">
@@ -53,100 +59,48 @@
                     </li>
                 </ul>
                 <ul class="time-product">
-                    <li class="product-item">
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'14K包金星月双层叠戴项链',
-                            brand:'1',
-                            nowprize:299,
-                            delprize:500,
-                        }" :nowsell="3"></product>
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'一人美梦 14K包金捕梦网项链',
-                            brand:'品牌：LandonLacey',
-                            nowprize:199,
-                            delprize:389,
-                        }" :nowsell="5"></product>
-                    </li>
-                    <li class="product-item">
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'14K包金星月双层叠戴项链',
-                            brand:'2',
-                            nowprize:299,
-                            delprize:500,
-                        }" :nowsell="3"></product>
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'一人美梦 14K包金捕梦网项链',
-                            brand:'品牌：LandonLacey',
-                            nowprize:199,
-                            delprize:389,
-                        }" :nowsell="5"></product>
-                    </li>
-                    <li class="product-item">
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'14K包金星月双层叠戴项链',
-                            brand:'3',
-                            nowprize:299,
-                            delprize:500,
-                        }" :nowsell="3"></product>
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'一人美梦 14K包金捕梦网项链',
-                            brand:'品牌：LandonLacey',
-                            nowprize:199,
-                            delprize:389,
-                        }" :nowsell="5"></product>
-                    </li>
-                    <li class="product-item">
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'14K包金星月双层叠戴项链',
-                            brand:'4',
-                            nowprize:299,
-                            delprize:500,
-                        }" :nowsell="3"></product>
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'一人美梦 14K包金捕梦网项链',
-                            brand:'品牌：LandonLacey',
-                            nowprize:199,
-                            delprize:389,
-                        }" :nowsell="5"></product>
-                    </li>
-                    <li class="product-item">
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'14K包金星月双层叠戴项链',
-                            brand:'5',
-                            nowprize:299,
-                            delprize:500,
-                        }" :nowsell="3"></product>
-                        <product :info="{
-                            url:'http://ooklady.com/imgs/item/20151204/201607221950358041.png',
-                            name:'一人美梦 14K包金捕梦网项链',
-                            brand:'品牌：LandonLacey',
-                            nowprize:199,
-                            delprize:389,
-                        }" :nowsell="5"></product>
+                    <li class="product-item" v-for="timeItem in products.timelimit">
+                        <product :info="item" v-for="item in timeItem"></product>
                     </li>
                 </ul>
             </div>
         </div>
+        <!-- /限时购 -->
+        <!-- 销量榜产品 -->
         <div class="part top1">
             <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/3top1.jpg">
             <a :href="item | getProductInfo" class="p{{$index+1}} topp" v-for="item in products.top4s"></a>
         </div>
         <div class="part top2">
             <a :href="item | getProductInfo" class="topb" v-for="item in products.top5_12s"></a>
+            <a :href="products.topmore | getProductList" class="topb"></a>
         </div>
+        <!-- /销量榜产品 -->
+        <!--  3折扣 -->
         <a class="part" :href="products.discount | getProductList">
             <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/4discount3.jpg">
         </a>
+        <!-- / 3折扣 -->
+        <!--  趋势 -->
+        <div class="part trend">
+    
+        </div>
+        <!-- / 趋势 -->
+        <!-- oshow -->
+        <div class="part star">
 
+        </div>
+        <!-- /oshow -->
+        <!-- 礼物 -->
+        <div class="part gift">
+        </div>
+        <!-- /礼物 -->
+        <!-- 品牌 -->
+        <div class="brand"></div>
+        <!-- /品牌 -->
+        <!-- bottom -->
+        <div class="bottom"></div>
+        <!-- /bottom -->
     </div>
 </body>
 </html>
