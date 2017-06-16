@@ -169,7 +169,7 @@ const data = {
         },
         {
             brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand6.jpg",
-            brandname:"SHASHI"
+            brandname:"Shashi"
         },
         {
             brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand7.jpg",
@@ -177,7 +177,7 @@ const data = {
         },
         {
             brandimg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/8brand8.jpg",
-            brandname:"Vanessa Monney"
+            brandname:"Vanessa Mooney"
         }
     ]
 
