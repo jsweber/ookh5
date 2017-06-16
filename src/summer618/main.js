@@ -1,9 +1,18 @@
 import style from './style.scss'
 import Vue from "js/vue.js"
 import vue_filter from "js/vue.filter.js"
-import component from "./component"
+import setWX from "js/wxShare"
+import mountCompnent from "./component"
 import data from "./data"
+
+let component = mountCompnent("develop");
 vue_filter();
+setWX({
+    env:"develop",
+    desc:'618\"饰放\"狂欢，囤够一夏',
+    shareImg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/0cover.jpg",
+    shareLink:location.href
+});
 function init(hour){
     //June 13,2017 18:33:35  dateObject.getHours() 0-23
     const timePoint = [0,8,12,16,20,24];
