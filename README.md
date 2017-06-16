@@ -1,11 +1,11 @@
 # ookh5
 <p>ook一些日常活动的单页面应用开发打包环境</p>
 <p>node版本6.2以上</p>
-<p>支持scss，es2015</p>
+<p>支持scss，es2015 , async/await 语法糖</p>
 
 ## 开发规范：
 <p>1.首先要去project.config.json 配置项目信息</p>
-<p>2.创建目录npm run create ，然后会在src下生成你要的小项目，一个html，一个js，一个scss
+<p>2.创建初始化文件（npm run create），会在src下生成你要的小项目，一个html，一个js，一个scss。todo:
 如果要生成多页面应用，则要创建多个，需要不断去改配置文件，以后会修改</p>
 
 ## 命令行
