@@ -14,7 +14,30 @@
     display:block;
     img{width:100%;display:block;}
 }
-
+.cover{
+    .shinning{
+        width:rem(206);
+        height:rem(94);
+        overflow: hidden;
+        position: absolute;
+        top:12.5rem;
+        left:4.5rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/neck1.png) no-repeat;
+        background-size:contain;
+        img{
+        width:100%;
+        height:100%;}
+    }
+    .shinning-target{
+        opacity: 1;
+        animation: shinning-ani 1s infinite;
+    }
+}
+@keyframes shinning-ani{
+    50%{
+        opacity:0.3
+    }
+}
 .limit-time{
 
 }
