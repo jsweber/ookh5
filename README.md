@@ -18,4 +18,4 @@
 
 ## 上线规范：
 <p>执行命令3</p>
-<p>p在dist目录下的文件整个拖到 view/wxpages/activitypage/   </p>
+<p>在dist目录下的文件整个活动项目文件夹 部署到正式服的view/wxpages/activitypage/目录下   </p>

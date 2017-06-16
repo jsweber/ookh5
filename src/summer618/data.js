@@ -123,10 +123,28 @@ const data = {
     topmore:"-960",
     //折扣专区
     discount:"-950",
-    //trend
-    trend:"-951",
+    //trend 顺序以从上到下，从左到右的顺序
+    trend:[
+        "-951",
+        "-953",
+        "-952",
+        "-955",
+        "-954"
+    ],
+    //明星和时尚博主
+    star:[
+        "-962",
+        "-963"
+    ],
+    //小雅活动链接
+    starxiaoya:"http://wx.ooklady.com/view/wxpages/activitypage/xiaoya/xiaoya.html",
     //gift
-    gift:"",
+    gift:[
+        "-958",
+        "-956",
+        "-959",
+        "-957"
+    ],
     //品牌列表
     brand:[
         {
