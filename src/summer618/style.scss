@@ -2,7 +2,9 @@
 @function rem($px){
     @return $px/750*16rem;
 }
-
+%dev{
+    background:rgba(0,0,0,0.5);
+}
 #app{
 
 }
@@ -189,7 +191,7 @@
         width:100%;
        position: absolute;
        left:0;
-        background:rgba(0,0,0,0.5);
+        @extend %dev;
         overflow: hidden;
     }
     .p1{
@@ -224,23 +226,109 @@
         float: left;
         margin:0 0 rem(25) rem(25);
         float:left;
-        background:rgba(0,0,0,0.5);
+        @extend %dev;
     }
 }
 .trend{
      height:rem(1530);
     background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/5trend.jpg) no-repeat;
     background-size:100%;
+
+    .trend1{
+        width:7rem;
+        height:6rem;
+        position: absolute;
+        left:1rem;
+        top:13rem;
+        @extend %dev;
+    }
+     .trend2{
+        width:7rem;
+        height:6rem;
+        position: absolute;
+        right:1rem;
+        top:15rem;
+        @extend %dev;
+    }
+     .trend3{
+        width:6rem;
+        height:7rem;
+        position: absolute;
+        left:1rem;
+        bottom:5rem;
+        @extend %dev;
+    }
+     .trend4{
+        width:7rem;
+        height:6rem;
+        position: absolute;
+        right:2rem;
+        bottom:3rem;
+        @extend %dev;
+    }
 }
 .star{
     height:rem(2700);
+    overflow: hidden;
     background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/6star.jpg) no-repeat;
     background-size:100%;
+    a{display:block;}
+    .star1{
+        width:16rem;
+        height:16rem;
+        margin-top:8rem;
+        @extend %dev;
+    }
+     .star2{
+        width:16rem;
+        height:16rem;
+        margin-top:0rem;
+        @extend %dev;
+    }
+     .star3{
+        width:16rem;
+        height:16rem;
+        margin-top:0rem;
+        @extend %dev;
+    }
 }
 .gift{
     height:rem(1420);
     background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/7gift.jpg) no-repeat;
     background-size:100%;
+
+    .gift1{
+        width:6rem;
+        height:4rem;
+        position: absolute;
+        top:5rem;
+        left:0.5rem;
+        @extend %dev;
+    }
+    .gift2{
+        width:6rem;
+        height:2rem;
+        position: absolute;
+        top:15rem;
+        left:1rem;
+        @extend %dev;
+    }
+    .gift3{
+        width:6rem;
+        height:5rem;
+        position: absolute;
+        top:15rem;
+        right:2rem;
+        @extend %dev;
+    }
+    .gift4{
+        width:9rem;
+        height:5rem;
+        position: absolute;
+        bottom:4rem;
+        left:3rem;
+        @extend %dev;
+    }
 }
 .brand-list{
     .brand-item{
