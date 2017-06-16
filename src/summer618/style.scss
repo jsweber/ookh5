@@ -35,7 +35,7 @@
 }
 @keyframes shinning-ani{
     50%{
-        opacity:0.3
+        opacity:0
     }
 }
 .limit-time{
@@ -44,7 +44,17 @@
 .time-list{
     width:100%;
     height:rem(110);
+    position: relative;
     overflow: hidden;
+
+    #limitmast{
+        height:100%;
+        width:0%;
+        position: absolute;
+        left:0;
+        top:0;
+        z-index:10;
+    }
 
     .time-item{
         width:20%;

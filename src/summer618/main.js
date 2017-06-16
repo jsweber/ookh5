@@ -15,7 +15,8 @@ getUserId(ENV).then((res)=>{
     console.log(res);
     setWX({
         env:ENV,
-        desc:'618\"饰放\"狂欢，囤够一夏',
+        title:'618\"饰放\"狂欢，囤够一夏',
+        desc:'全场3-9折，抢5万元大礼',
         shareImg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/0cover.jpg",
         shareLink:location.href+"?userId="+res.id
     });
@@ -44,18 +45,25 @@ function init(hour){
     //限时购交互
     let $timeItem = $(".time-item");
     let $productItem = $(".product-item")
+    let $mast = $("#limitmast");
     let index = setNowLimitProduct(hour);
-    console.log("第几个"+index);
+    console.log("第0-4个"+index);
     if(index>0){
-        $timeItem.eq(index-1).addClass("time-grey").find(".text").html("已抢购");   
+        for(let i=0;i<index;i++){
+            $timeItem.eq(i).addClass("time-grey").find(".text").html("已抢购"); 
+        }
     }
     $timeItem.eq(index).addClass("time-active").addClass("time-click").find(".text").html("抢购中");
     $productItem.eq(index).addClass("product-item-active");
-
+    
+    $mast.css({
+        width:parseInt(index / $timeItem.length * 100)+"%"
+    }).on("click",function(){
+        return false;
+    });
     $timeItem.on("click",function(){
         $timeItem.removeClass("time-click");
         $(this).addClass("time-click");
-
         $productItem.removeClass("product-item-active");
         $productItem.eq($(this).index()).addClass("product-item-active");
     });
