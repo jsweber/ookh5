@@ -3,7 +3,7 @@
     @return $px/750*16rem;
 }
 %dev{
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0);
 }
 #app{
 
@@ -177,7 +177,7 @@
             line-height: rem(35);
             .second-kill{
                 display:inline-block;
-                vertical-align: baseline;
+                vertical-align: top;
                 width:rem(90);
                 height:rem(28);
                 border-radius: rem(14);

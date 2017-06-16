@@ -2,7 +2,7 @@ import Vue from "js/vue.js"
 import vue_filter from "js/vue.filter.js"
 const CONF_BASE = {
     develop: {
-        wx_host: "http://test.ooklady.com",
+        wx_host: "http://dev.ooklady.com",
         app_host: "http://dev.ooklady.com",
         app_id:"wxf49416ed43c7baa8"
     },
@@ -15,6 +15,7 @@ const CONF_BASE = {
 function mountCompnent(env){
     let component = {};
     let app_host = CONF_BASE[env].app_host;
+    let wx_host = CONF_BASE[env].wx_host;
     let productTemplate = 
     `<a  class="wrapper" :href="info.itemid | getProductInfo">
         <div class="img-wrapper">
@@ -69,7 +70,7 @@ function mountCompnent(env){
         created () {
             let self = this;
             $.ajax({
-                url:app_host+'/wechat/item/ajaxStock?itemId='+this.info.itemid,
+                url:wx_host+'/wechat/item/ajaxStock?itemId='+this.info.itemid,
                 type:"get",
                 dataType:"json",
                 success(res){

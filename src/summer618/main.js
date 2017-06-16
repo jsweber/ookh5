@@ -7,7 +7,7 @@ import mountCompnent from "./component"
 import data from "./data"
 
 //发布正式版要改
-const ENV = "develop";
+const ENV = "production";
 
 let component = mountCompnent(ENV);
  vue_filter();
