@@ -50,7 +50,7 @@ function init(hour){
     console.log("第0-4个"+index);
     if(index>0){
         for(let i=0;i<index;i++){
-            $timeItem.eq(i).addClass("time-grey").find(".text").html("已抢购"); 
+            $timeItem.eq(i).addClass("time-grey").find(".text").html("敬请期待"); 
         }
     }
     $timeItem.eq(index).addClass("time-active").addClass("time-click").find(".text").html("抢购中");
