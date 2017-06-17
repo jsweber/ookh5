@@ -133,9 +133,9 @@ const data = {
     ],
     //明星和时尚博主
     star:[
-        "-962",
-        "-963"
+        "-962"
     ],
+    bozhu:"http://wx.ooklady.com/view/wxpages/activitypage/lb0617.html",
     //小雅活动链接
     starxiaoya:"http://wx.ooklady.com/view/wxpages/activitypage/xiaoya/xiaoya.html",
     //gift

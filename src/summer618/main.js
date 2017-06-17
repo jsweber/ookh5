@@ -23,6 +23,9 @@ getUserId(ENV).then((res)=>{
 });
 
 function init(hour){
+    if(+new Date() > +new Date("June 18,2017 00:00:00")){
+        $(".time-hook").hide();
+    }
     //June 13,2017 18:33:35  dateObject.getHours() 0-23
     const timePoint = [0,8,12,16,20,24];
     /*
@@ -50,7 +53,7 @@ function init(hour){
     console.log("第0-4个"+index);
     if(index>0){
         for(let i=0;i<index;i++){
-            $timeItem.eq(i).addClass("time-grey").find(".text").html("敬请期待"); 
+            $timeItem.eq(i).addClass("time-grey").find(".text").html("已抢购"); 
         }
     }
     $timeItem.eq(index).addClass("time-active").addClass("time-click").find(".text").html("抢购中");
