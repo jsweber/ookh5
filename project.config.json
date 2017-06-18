@@ -1,6 +1,6 @@
 {
-    "name":"summer618",
+    "name":"ccap_test",
     "version":"1.0.0",
-    "title":"618\"饰放\"狂欢，囤够一夏'",
+    "title":"验证码生成测试",
     "staticPath":"/view/wxpages/activitypage/"
 }
