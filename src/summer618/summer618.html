@@ -20,9 +20,11 @@
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1126357321&debug=true" charset="utf-8"></script>
     <script src="http://wx.ooklady.com/easyui/wechat/js/OAuth_login.js"></script>
 </head>
-<body>
-    <!--<div v-if="!delay"></div>-->
-    <div id="app">
+<body id="app">
+    <div v-if="!isShow">
+        <p class="over" @click="goAfter618">618当天大促已经结束，<br/>2秒后将自动跳转到返场页</p>
+    </div>
+    <div v-if="isShow">
         <div class="part cover">
             <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/cover.jpg">
             <div class="shinning">

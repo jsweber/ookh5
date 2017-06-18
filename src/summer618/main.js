@@ -71,18 +71,50 @@ function init(hour){
         $productItem.eq($(this).index()).addClass("product-item-active");
     });
 }
+function isInApp(){
+    return getPara("type") == "app";
+}
 
+function getPara(paraName) {
+    var urlPara = location.search;
+    var reg = new RegExp("[&|?]" + paraName + "=([^&$]*)", "gi");
+    var a = reg.test(urlPara);
+    return a ? RegExp.$1 : null;
+}
+
+//把obj1的值赋给obj2
+function clone(obj1, obj2) {
+    for (var attr in obj1) {
+        obj2[attr] = obj1[attr];
+    }
+}
 let vue = new Vue({
     el:"#app",
     data:{
         products:data,
-        // delay:+new Date() > +new Date("June 19,2017 00:00:00")
+        isShow:+new Date() < +new Date("June 19,2017 00:00:00")
     },
     components: {
       product : component.product,
       brand : component.brand
     },
+    methods: {
+        goAfter618(){
+            if(isInApp()){
+                location.href = "http://wx.ooklady.com/view/wxpages/activitypage/after618/after618.html?type=app";
+            }else{
+                location.href = "http://wx.ooklady.com/view/wxpages/activitypage/after618/after618.html";
+            }
+        }
+    },
     ready(){
+        console.log("this.isShow:"+this.isShow);
+        if(!this.isShow){
+            setTimeout(()=>{
+                this.goAfter618();
+            },2000);
+        }
+
         init(new Date().getHours());
         $(".gotop").on("click",function(){
             $(document).scrollTop(0);
