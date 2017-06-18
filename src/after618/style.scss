@@ -228,22 +228,22 @@
         overflow: hidden;
     }
     .p1{
-        top:rem(370);
+        top:rem(250);
         height:rem(520);
     }
     .p2{
-        top:rem(370+520);
+        top:rem(250+520);
         height:rem(550);
     }
     .p3{
         width:rem(340);
-        top:rem(370+520+550);
+        top:rem(250+520+550);
         height:rem(476);
     }
     .p4{
         width:rem(340);
         left:rem(400);
-        top:rem(370+520+550);
+        top:rem(250+520+550);
         height:rem(400);
     }
 }

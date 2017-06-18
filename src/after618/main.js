@@ -15,9 +15,9 @@ getUserId(ENV).then((res)=>{
     console.log(res);
     setWX({
         env:ENV,
-        title:'618\"饰放\"狂欢，囤够一夏',
-        desc:'全场3-9折，抢5万元大礼',
-        shareImg:"http://wx.ooklady.com/imgs/xiaoqing/summer618/0cover.jpg",
+        title:'饰放狂欢，囤够一夏',
+        desc:'最后一天619，全场3-9折',
+        shareImg:"http://wx.ooklady.com/imgs/xiaoqing/after618/0cover.jpg",
         shareLink:location.href+"?userId="+res.id
     });
 });

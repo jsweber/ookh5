@@ -76,6 +76,7 @@ let vue = new Vue({
     el:"#app",
     data:{
         products:data,
+        // delay:+new Date() > +new Date("June 19,2017 00:00:00")
     },
     components: {
       product : component.product,
