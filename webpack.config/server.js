@@ -63,10 +63,6 @@ function server(app){
             </html>
         `);
     });
-    app.use((req,res,next)=>{
-        console.log("过滤"+req.session.yz);
-        next();
-    });
     app.get("/yz2",(req,res)=>{
         let num = req.query.captcha;
         console.log(typeof num,num);

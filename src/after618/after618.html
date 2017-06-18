@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>618"饰放"狂欢，囤够一夏'</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="icon" href="http://wx.ooklady.com/easyui/wechat/images/favicon.ico" type="image/x-icon">
+    <script>
+        (function () {
+            var df_width = 320, df_dpr = 1, df_fs = 20, win = window, doc = document, html = doc.getElementsByTagName('html')[0];
+            html.setAttribute('data-dpr', win.devicePixelRatio);
+            html.setAttribute('style', 'font-size:' + (doc.documentElement.clientWidth / df_width * df_fs) + 'px');
+        })();
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1126357321&debug=true" charset="utf-8"></script>
+    <script src="http://wx.ooklady.com/easyui/wechat/js/OAuth_login.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="part cover">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/cover.jpg">
+            <div class="shinning">
+                <img class="shinning-target" src="http://wx.ooklady.com/imgs/xiaoqing/summer618/neck2.png">
+            </div>
+        </div>
+        <!-- 销量榜产品 -->
+        <div class="part top1">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/after618/2top1.jpg">
+            <a :href="item | getProductInfo" class="p{{$index+1}} topp" v-for="item in products.top4s"></a>
+        </div>
+        <div class="part top2">
+            <a :href="item | getProductInfo" class="topb" v-for="item in products.top5_12s"></a>
+            <a :href="products.topmore | getProductList" class="topb"></a>
+        </div>
+        <!-- /销量榜产品 -->
+        <!--  3折扣 -->
+        <a class="part" :href="products.discount | getProductList">
+            <img src="http://wx.ooklady.com/imgs/xiaoqing/summer618/4discount3.jpg">
+        </a>
+        <!-- / 3折扣 -->
+        <!--  趋势 -->
+        <div class="part trend">
+            <a :href="item | getProductList" class="trend{{$index}}" v-for="item in products.trend"></a>
+        </div>
+        <!-- / 趋势 -->
+        <!-- oshow -->
+        <div class="part star">
+            <a :href="item | getProductList" class="star{{$index+1}}" v-for="item in products.star"></a>
+            <a :href="products.bozhu" class="star2"></a>
+            <a :href="products.starxiaoya" class="star3"></a>
+        </div>
+        <!-- /oshow -->
+        <!-- 礼物 -->
+        <div class="part gift">
+            <a :href="item | getProductList" class="gift{{$index+1}}" v-for="item in products.gift"></a>
+        </div>
+        <!-- /礼物 -->
+        <!-- 品牌 -->
+        <ul class="part brand-list">
+            <brand :brand="item" v-for="item in products.brand"></brand>
+        </ul>
+        <!-- /品牌 -->
+        <!-- bottom -->
+        <div class="part bottom">
+            <a href="javascript:;" class="gotop"></a>
+            <a :href="'' | goIndex" class="goindex"></a>
+        </div>
+        <!-- /bottom -->
+    </div>
+</body>
+</html>

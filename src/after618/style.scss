@@ -1,0 +1,481 @@
+@import './lib/css/reset.scss';
+@function rem($px){
+    @return $px/750*16rem;
+}
+%dev{
+    background:rgba(0,0,0,0);
+}
+#app{
+
+}
+.part{
+    position: relative;
+    overflow: hidden;
+    display:block;
+    img{width:100%;display:block;}
+}
+.cover{
+    .shinning{
+        width:rem(206);
+        height:rem(94);
+        overflow: hidden;
+        position: absolute;
+        top:12.5rem;
+        left:4.5rem;
+        background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/neck1.png) no-repeat;
+        background-size:contain;
+        img{
+        width:100%;
+        height:100%;}
+    }
+    .shinning-target{
+        opacity: 1;
+        animation: shinning-ani 1s infinite;
+    }
+}
+@keyframes shinning-ani{
+    50%{
+        opacity:0
+    }
+}
+.limit-time{
+
+}
+.time-list{
+    width:100%;
+    height:rem(110);
+    position: relative;
+    overflow: hidden;
+
+    #limitmast{
+        height:100%;
+        width:0%;
+        position: absolute;
+        left:0;
+        top:0;
+        z-index:10;
+    }
+
+    .time-item{
+        width:20%;
+        height:rem(90);
+        padding-top:rem(20);
+        position: relative;
+        float:left;
+        background:#4a4a4a;
+        color:#fff;
+        text-align:center;
+        font-weight: bold;
+        line-height: rem(30);
+        font-size:rem(20);
+    }
+
+    .time-active{
+        background:#f5779d;
+    }
+    .time-click{
+
+    }
+    .time-click::after{
+        content:" ";
+        width:0;
+        height:0;
+        border:8px solid transparent;
+        border-bottom:8px solid #fff;
+        position: absolute;
+        bottom:0;
+        left:rem(60);
+    }
+    .time-grey{
+        color:#656565;
+    }
+}
+.time-product{
+    width:100%;
+    height:rem(700);
+    overflow: hidden;
+    position: relative;
+}
+.product-item{
+    height:rem(700);
+    width:100%;
+    position: absolute;
+    top:0;
+    left:-100%;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    .wrapper{
+        display:block;
+        width:100%;
+        height:rem(280);
+        overflow: hidden;
+        padding-top:rem(40);
+    }
+    .wrapper:first-of-type{
+        border-bottom:1px solid #ccc;
+    }
+    .img-wrapper{
+        width:rem(230);
+        height:rem(230);
+        border:1px solid #ccc;
+        overflow: hidden;
+        position: relative;
+        float:left;
+        margin-left:rem(40);
+        img{display:block;width:100%;}
+        .sell-out{
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width:rem(100);
+            height:rem(100);
+            padding-top:rem(15);
+            position:absolute;
+            left:rem(65);
+            top:rem(65);
+            border-radius: rem(50);
+            overflow: hidden;
+            background:rgba(0,0,0,0.6);
+            text-align: center;
+            color:#fff;
+            font-size:12px;
+        }
+    }
+    .product-info{
+        margin-left:rem(50);
+        width:rem(400);
+        overflow: hidden;
+        float:left;
+
+        .name{
+            font-weight: bold;
+        }
+        .brand{
+            font-size:12px;
+            color:#ccc;
+        }
+        .store{
+            line-height: rem(20);
+            margin-top:rem(40);
+            margin-bottom:rem(30);
+            vertical-align: top;
+
+            .propress-wrapper{
+                vertical-align: top;
+                display:inline-block;
+                width:rem(210);
+                height:rem(20);
+                background:#f0f0f0;
+                overflow: hidden;
+                border-radius: rem(10);
+            }
+            .propress-bar{
+                width:30%;
+                height:100%;
+                border-radius: rem(10);
+                background:#4a4a4a;
+            }
+            .store-text{
+                vertical-align: top;
+                color:#ccc;
+                margin-left:5px;
+                font-size:12px;
+                line-height:rem(20);
+            }
+        }
+        .prize{
+            vertical-align: baseline;
+            line-height: rem(35);
+            .second-kill{
+                display:inline-block;
+                vertical-align: top;
+                width:rem(90);
+                height:rem(28);
+                border-radius: rem(14);
+                border:1px solid #000;
+                text-align: center;
+                line-height: rem(28);
+                font-size:10px;
+            }
+            .now-prize{
+                display:inline-block;
+                vertical-align: baseline;
+                margin-left:1px;
+                color:#ff689f;
+                font-size:20px;
+            }
+            .del-prize{
+                display:inline-block;
+                vertical-align: baseline;
+                margin-left:1px;
+                color:#ccc;
+                font-size:12px;
+                text-decoration: line-through;
+            }
+        }
+    }
+}
+ .product-item-active{
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+}
+.top1{
+    .topp{
+        display:block;
+        width:100%;
+       position: absolute;
+       left:0;
+        @extend %dev;
+        overflow: hidden;
+    }
+    .p1{
+        top:rem(370);
+        height:rem(520);
+    }
+    .p2{
+        top:rem(370+520);
+        height:rem(550);
+    }
+    .p3{
+        width:rem(340);
+        top:rem(370+520+550);
+        height:rem(476);
+    }
+    .p4{
+        width:rem(340);
+        left:rem(400);
+        top:rem(370+520+550);
+        height:rem(400);
+    }
+}
+.top2{
+    height:rem(1200);
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/after618/2top2.jpg) no-repeat;
+    background-size:100%;
+    position: relative;
+
+    .topb{
+        width:rem(220);
+        height:rem(366);
+        float: left;
+        margin:0 0 rem(25) rem(25);
+        float:left;
+        @extend %dev;
+    }
+}
+.trend{
+     height:rem(1530);
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/5trend.jpg) no-repeat;
+    background-size:100%;
+
+    .trend0{
+        width:13rem;
+        height:6rem;
+        position: absolute;
+        left:1rem;
+        top:5rem;
+        @extend %dev;
+    }
+    .trend1{
+        width:7rem;
+        height:6rem;
+        position: absolute;
+        left:1rem;
+        top:13rem;
+        @extend %dev;
+    }
+     .trend2{
+        width:7rem;
+        height:6rem;
+        position: absolute;
+        right:1rem;
+        top:15rem;
+        @extend %dev;
+    }
+     .trend3{
+        width:6rem;
+        height:7rem;
+        position: absolute;
+        left:1rem;
+        bottom:5rem;
+        @extend %dev;
+    }
+     .trend4{
+        width:7rem;
+        height:6rem;
+        position: absolute;
+        right:2rem;
+        bottom:3rem;
+        @extend %dev;
+    }
+}
+.star{
+    height:rem(2700);
+    overflow: hidden;
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/6star.jpg) no-repeat;
+    background-size:100%;
+    a{display:block;}
+    .star1{
+        width:16rem;
+        height:16rem;
+        margin-top:8rem;
+        @extend %dev;
+    }
+     .star2{
+        width:16rem;
+        height:16rem;
+        margin-top:0rem;
+        @extend %dev;
+    }
+     .star3{
+        width:16rem;
+        height:16rem;
+        margin-top:0rem;
+        @extend %dev;
+    }
+}
+.gift{
+    height:rem(1420);
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/7gift.jpg) no-repeat;
+    background-size:100%;
+
+    .gift1{
+        width:6rem;
+        height:4rem;
+        position: absolute;
+        top:5rem;
+        left:0.5rem;
+        @extend %dev;
+    }
+    .gift2{
+        width:6rem;
+        height:2rem;
+        position: absolute;
+        top:15rem;
+        left:1rem;
+        @extend %dev;
+    }
+    .gift3{
+        width:6rem;
+        height:5rem;
+        position: absolute;
+        top:15rem;
+        right:2rem;
+        @extend %dev;
+    }
+    .gift4{
+        width:9rem;
+        height:5rem;
+        position: absolute;
+        bottom:4rem;
+        left:3rem;
+        @extend %dev;
+    }
+}
+.brand-list{
+    .brand-item{
+        height:19rem;
+        width:100%;
+
+        .brand-img{
+            width:100%;
+            height:rem(526);
+            display:block;
+            overflow: hidden;
+            img{
+                display:block;
+                width:100%;
+            }
+        }
+        .product-wrapper{
+            width:100%;
+            height:8rem;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .scroll-move{
+            height:100%;
+            -webkit-transform:translate3d(0,0,0);
+            transform:translate3d(0,0,0);
+        }
+        .productmore{
+             -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width:rem(220);
+            padding-top:rem(30);
+            height:100%;
+            float:left;
+
+            .more-btn{
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                display:block;
+                width:rem(160);
+                height:rem(160);
+                margin:0 auto;
+                background:#fdf1f3;
+                text-align: center;
+                padding-top:rem(50);
+                line-height: rem(40);
+                font-size:12px;
+            }
+        }
+        .product{
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width:rem(220);
+            padding-top:rem(30);
+            height:100%;
+            float:left;
+            .img-wrapper{
+                display:block;
+                width:rem(200);
+                height:rem(200);
+                overflow: hidden;
+                margin:0 auto;
+                img{
+                    display:block;
+                    width:100%;
+                }
+            }
+            .text{
+                width:100%;
+                height:rem(60);
+                margin-top:rem(20);
+                line-height: rem(60);
+                text-align: center;
+                font-size:14px;
+            }
+        }
+    }
+}
+.bottom{
+    height:rem(1116);
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/after618/bottom.jpg) no-repeat;
+    background-size:100%;
+
+    .gotop{
+        width:4rem;
+        height:1rem;
+        position: absolute;
+        bottom:6rem;
+        left:6rem;
+    }
+    .goindex{
+        width:6rem;
+        height:2rem;
+        position: absolute;
+        bottom:2.7rem;
+        left:5rem;
+    }
+}
+.time-hook{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background:url(http://wx.ooklady.com/imgs/xiaoqing/summer618/limittt.jpg) no-repeat;
+    background-size:contain;
+    z-index:999;
+}
