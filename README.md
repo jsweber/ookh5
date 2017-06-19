@@ -7,6 +7,7 @@
 <p>1.首先要去'/project.config.json' 配置项目信息，注意<strong>staticPath</strong>字段是打包后的css和js文件插到html中的路径（ex:  /view/wxpages/activitypage/[project name]/style.css），一般不用更改</p>
 <p>2.创建初始化文件（npm run create），会在src下生成你要的小项目，一个html，一个js，一个scss。<span style="color:#ccc;"><strong>todo</strong>:
 如果要生成多页面应用，则要创建多个，需要不断去改配置文件，以后会修改</span></p>
+<p><span style="color:red">3</span>.当你要更改开发项目时需要修改project.config.json 中的name和title，改成要开发的项目，否者你要开发的项目不能正常热加载和打包</p>
 
 ## 命令行
 <ol>
